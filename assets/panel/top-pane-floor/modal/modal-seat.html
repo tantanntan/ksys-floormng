@@ -1,0 +1,34 @@
+<div id= "modal-seat" class="modal fade" role="dialog" data-backdrop="static">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4 class="modal-title">席追加</h4>
+    </div>
+    <div class="modal-body">
+      <form role="form" class="modal-form-seat form-horizontal" >
+        <div class="form-group form-group-lg">
+          <label for="modal-form-seat-name" class="col-sm-2 control-label">座席名</label>
+          <div class="col-sm-8">
+            <div class="input-group">
+              <input type="text" id='modal-form-seat-name' class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="modal-form-seat-max" class="col-sm-2 control-label">人数</label>
+          <div class="col-sm-8">
+            <div class="input-group">
+              <input type="text" id='modal-form-seat-max' class="form-control">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default btn-left" data-dismiss="modal">Cancel</button>
+      <button id="modal-form-seat-save-btn" type="button" class="btn btn-primary" data-dismiss="modal" data-target="#modal-seat">保存</button>
+    </div>
+  </div>
+</div>
+</div>

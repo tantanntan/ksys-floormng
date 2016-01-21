@@ -1,0 +1,25 @@
+<form action="/login" method="post">  
+<div class="login">  
+    login: <input type="text" name="username" placeholder="Input Login ID" value="suzuki" /> <br/><br/>
+    password: <input type="password" name="password" placeholder="Input Login Password" value="suzuki" /><br/><br/>
+    店舗:<select id="tenponame"></select><br/><br/>
+    <input type="hidden" name="shopId" id="shopId" value="" />
+    <button type="submit" id='btn_submit' class="TBL_BLUE">ログイン</button>
+</div>  
+</form>
+<script>
+  $(function(){
+    // 4/20 ログイン画面 店舗選択プルダウン
+    $('#tenponame option').remove();
+    io.socket.get('/mshop?limit=0', function(shop,err) {
+      for(var c in shop){
+        $('#tenponame').append($('<option>').html(shop[c].shopName).val(shop[c].id));
+      }
+    });
+      
+    $('#btn_submit').on("click", function(){
+      console.log('店舗：' + $('#tenponame').val() + 'でログイン');
+      $('#shopId').val($('#tenponame').val());
+    });
+  });
+</script>

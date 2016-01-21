@@ -1,0 +1,121 @@
+<div id= "modal-new-visitor" class="modal fade" role="dialog" data-backdrop="static">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4 class="modal-title">顧客追加</h4>
+    </div>
+    <div class="modal-body">
+      <p class="message"><span class="seat-name"></span>に着席させます</p>
+      <form role="form" class="modal-form-new-vis form-horizontal" >
+        <div class="form-group form-group-lg">
+          <label for="modal-form-new-vis-number" class="col-sm-3 control-label">人数</label>
+          <div class="col-sm-7">
+            <select id="modal-form-new-vis-number" class="form-new-vis-number form-control"></select>
+            <span class="help-block">人数を選択して下さい。</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-form-new-vis-set-preset" class="col-sm-3 control-label">セット</label>
+          <div class="col-sm-7">
+            <select id="modal-form-new-vis-set-preset" class="form-new-vis-set-preset form-control"></select>
+            <span class="help-block">セットを選択すると時間と価格が入力されます。</span>
+          </div>
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="modal-form-new-vis-minutes" class="col-sm-3 control-label">時間</label>
+          <div class="col-sm-7">
+            <div class="input-group">
+              <input type="text" id='modal-form-new-vis-minutes' class="form-control">
+              <span class="input-group-addon">分</span>
+            </div>
+          </div>
+          <div class="col-sm-1">
+            <button class="btn_minutes_del"><span class="glyphicon glyphicon-remove-circle"></span></button>
+          </div>
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="modal-form-new-vis-price" class="col-sm-3 control-label">価格</label>
+          <div class="col-sm-7">
+            <div class="input-group">
+              <input type="text" id='modal-form-new-vis-price' class="form-control">
+              <span class="input-group-addon">円</span>
+            </div>
+            <span class="help-block">一人あたりの価格を入力してください。</span>
+          </div>
+          <div class="col-sm-1">
+            <button class="btn_price_del"><span class="glyphicon glyphicon-remove-circle"></span></button>
+          </div>
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="modal-form-new-vis-service" class="col-sm-3 control-label">サービス料</label>
+            <div class="col-sm-7">
+            <div class="input-group">
+              <label><input type="checkbox" id='modal-form-new-vis-service' class="checkbox" value="1"/>0円</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="modal-form-new-vis-tax" class="col-sm-3 control-label">TAX</label>
+            <div class="col-sm-7">
+            <div class="input-group">
+              <label><input type="checkbox" id='modal-form-new-vis-tax' class="checkbox" value="1"/>0円</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="modal-form-new-vis-card" class="col-sm-3 control-label">カード手数料</label>
+            <div class="col-sm-7">
+            <div class="input-group">
+              <label><input type="checkbox" id='modal-form-new-vis-card' class="checkbox" value="1"/>0円</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="modal-form-new-vis-set-disc1" class="col-sm-3 control-label">特徴１</label>
+          <div class="col-sm-7">
+            <select id="modal-form-new-vis-set-disc1" class="form-new-vis-set-disc1 form-control">
+              <option>普通の</option>
+              <option>大事な</option>
+              <option>要注意な</option>
+              <option>ハゲた</option>
+              <option>痩せた</option>
+              <option>とっぽい</option>
+              <option>肥えた</option>
+              <option>ガリガリの</option>
+              <option>いかつい</option>
+              <option>しょぼい</option>
+              <option>最近知り合った</option>
+              <option>昔から知っている</option>
+              <option>地元の</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="modal-form-new-vis-set-disc2" class="col-sm-3 control-label">特徴２</label>
+          <div class="col-sm-7">
+            <select id="modal-form-new-vis-set-disc2" class="form-new-vis-set-disc1 form-control">
+              <option>お客さま</option>
+              <option>常連さん</option>
+              <option>おっさん</option>
+              <option>イケメン</option>
+              <option>紳士</option>
+              <option>ヤー公</option>
+              <option>リーマン</option>
+              <option>ツレ</option>
+              <option>同業者</option>
+              <option>警官</option>
+            </select>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default btn-left" data-dismiss="modal">Cancel</button>
+      <button id="modal-form-new-vis-save-btn" type="button" class="btn btn-primary" data-dismiss="modal" data-target="#modal-new-visitor">保存</button>
+    </div>
+  </div>
+</div>
+</div>

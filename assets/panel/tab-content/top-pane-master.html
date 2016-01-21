@@ -1,0 +1,100 @@
+<div class="tab-pane fade" id="top-pane-master">
+  <h4><span id="master_member" class="link">従業員管理</span></h4>
+  <div id="membermaster_div" style="display: none">
+  <table id="membermaster_table" border="1">
+    <tr>
+      <th class="noborder2"><br></th>
+      <th class="TBL_BLUE">ログインID</th>
+      <th class="TBL_BLUE">名前</th>
+      <th class="TBL_BLUE">電話番号</th>
+      <th class="TBL_BLUE">メールアドレス</th>
+      <th class="TBL_BLUE">パスワード</th>
+      <th class="TBL_BLUE">権限</th>
+    </tr>
+    <!-- 従業員マスタtemplates -->
+    <tr id="membermaster_template" style="display: none">
+      <td class="noborder2" nowrap>
+        <input type="button" class="btn_membermaster_del delBtn" value="×"></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="membermaster_m_id noborder" size="10" maxlength="10" value=""></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="membermaster_name noborder" size="15" maxlength="20" value=""></input>
+        <input type="hidden" class="membermaster_id" value=""></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="membermaster_tel noborder" size="14" maxlength="14" value=""></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="membermaster_mail noborder" size="20" maxlength="40" value=""></input>
+      </td>
+      <td nowrap>
+        <input type="password" class="membermaster_password noborder" size="10" maxlength="20" value=""></input>
+      </td>
+      <td nowrap>
+        <select class="membermaster_accesslv noborder"></select>
+      </td>
+    </tr>
+    <!-- 従業員マスタtemplates end-->
+  </table>
+    <div>
+      <input type="button" id="btn_membermaster_add" class="addBtn" value="+"></input>
+    </div>
+    <br>
+    <div>
+      <input type="button" id="btn_membermaster_create" class="TBL_BLUE" value="登録"></input>
+    </div>
+  </div>
+  <br>
+  <h4><span id="master_access" class="link">権限マスタ管理</span></h4>
+  <div id="accessmaster_div" style="display: none">
+  <table id="accessmaster_table" border="1">
+    <tr>
+      <th class="noborder2"><br></th>
+      <th class="TBL_BLUE">権限名称</th>
+      <th class="TBL_BLUE">編集可否</th>
+    </tr>
+    <!-- 権限マスタtemplates -->
+    <tr id="accessmaster_template" style="display: none">
+      <td class="noborder2" nowrap>
+        <input type="button" class="btn_accessmaster_del delBtn" value="×"></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="accessmaster_accessname noborder" size="15" maxlength="20" value=""></input>
+        <input type="hidden" class="accessmaster_id" value=""></input>
+        <input type="hidden" class="accessmaster_accesslv" value=""></input>
+        <input type="hidden" class="accessmaster_store" value=""/>
+      </td>
+      <td nowrap>&nbsp;
+        <label><input type="checkbox" class="accessmaster_check1 checkbox" value="1"/>営業準備</label>&nbsp;&nbsp;&nbsp;
+        <label><input type="checkbox" class="accessmaster_check2 checkbox" value="1"/>営業中</label>&nbsp;&nbsp;&nbsp;
+        <label><input type="checkbox" class="accessmaster_check3 checkbox" value="1"/>出退勤</label>&nbsp;&nbsp;&nbsp;
+        <label><input type="checkbox" class="accessmaster_check4 checkbox" value="1"/>キャスト</label>&nbsp;&nbsp;&nbsp;
+        <label><input type="checkbox" class="accessmaster_check5 checkbox" value="1"/>店舗情報</label>&nbsp;&nbsp;&nbsp;
+        <input type="button" class="accessmaster_store_link TBL_BLUE" value="店舗選択"></input>&nbsp;&nbsp;&nbsp;
+        <label><input type="checkbox" class="accessmaster_check6 checkbox" value="1"/>集計</label>&nbsp;&nbsp;&nbsp;
+        <label><input type="checkbox" class="accessmaster_check7 checkbox" value="1"/>マスタ</label>&nbsp;&nbsp;&nbsp;
+        <label><input type="checkbox" class="accessmaster_check8 checkbox" value="1"/>企業情報</label>&nbsp;&nbsp;&nbsp;
+      </td>
+    </tr>
+    <!-- 権限マスタtemplates end-->
+  </table>
+    <div>
+      <input type="button" id="btn_accessmaster_add" class="addBtn" value="+"></input>
+    </div>
+    <br>
+    <div>
+      <input type="button" id="btn_accessmaster_create" class="TBL_BLUE" value="登録"></input>
+    </div>
+  </div>
+</div>
+<script>
+  $(function(){
+    
+    if(!_top_pane_ready_load){
+      _top_pane_ready_load=true;
+      window.ks.main.loaded();
+    }
+  });
+</script>

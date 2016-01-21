@@ -1,0 +1,157 @@
+<div id= "modal-nsys-customer" class="modal fade" role="dialog" data-backdrop="static">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4 class="modal-title">新規受付</h4>
+    </div>
+    <div class="modal-body">
+      <div id="inputform" style="display: ">
+        <div>
+          人数：<input type="text" class="num" id="cus-member" size="4" maxlength="4" value="" readOnly></input>
+          <button id="btn_member_del">C</button>
+          <label class="bg-info">下のタッチパネルより入力してください。</label>
+        </div>
+        <br>
+        <div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal2("1");'>1</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal2("2");'>2</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal2("3");'>3</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal2("4");'>4</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal2("5");'>5</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal2("6");'>6</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal2("7");'>7</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal2("8");'>8</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal2("9");'>9</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal2("0");'>0</button></div>
+        </div>
+        <br>
+        <div>
+          お名前：<input type="text" id="cus-name" size="20" maxlength="40" value="" readOnly></input>
+          <button id="btn_name_del-1"><<</span></button>
+          <button id="btn_name_del">C</button>
+          <label class="bg-info">下のタッチパネルより入力してください。</label>
+        </div>
+        <br>
+        <div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ワ");'>ワ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ラ");'>ラ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ャ");'>ャ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ヤ");'>ヤ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("マ");'>マ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ハ");'>ハ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ナ");'>ナ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("タ");'>タ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("サ");'>サ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("カ");'>カ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ァ");'>ァ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ア");'>ア</button></div>
+        </div>
+        <br>
+        <div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("゛");'>゛</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("リ");'>リ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ッ");'>ッ</button></div>
+          <div class="nodiv"><button class='dflbtn'>　</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ミ");'>ミ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ヒ");'>ヒ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ニ");'>ニ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("チ");'>チ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("シ");'>シ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("キ");'>キ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ィ");'>ィ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("イ");'>イ</button></div>
+        </div>
+        <br>
+        <div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ヲ");'>ヲ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ル");'>ル</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ュ");'>ュ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ユ");'>ユ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ム");'>ム</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("フ");'>フ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ヌ");'>ヌ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ツ");'>ツ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ス");'>ス</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ク");'>ク</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ゥ");'>ゥ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ウ");'>ウ</button></div>
+        </div>
+        <br>
+        <div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("゜");'>゜</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("レ");'>レ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ー");'>ー</button></div>
+          <div class="nodiv"><button class='dflbtn'>　</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("メ");'>メ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ヘ");'>ヘ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ネ");'>ネ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("テ");'>テ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("セ");'>セ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ケ");'>ケ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ェ");'>ェ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("エ");'>エ</button></div>
+        </div>
+        <br>
+        <div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ン");'>ン</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ロ");'>ロ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ョ");'>ョ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ヨ");'>ヨ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("モ");'>モ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ホ");'>ホ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ノ");'>ノ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ト");'>ト</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ソ");'>ソ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("コ");'>コ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("ォ");'>ォ</button></div>
+          <div class="nodiv"><button class='dflbtn' onclick='javascript:ns.customer.addVal("オ");'>オ</button></div>
+        </div>
+        <br>
+        <div id="option1" style="display: none">
+          <span id="option1_opttitle" class="col-sm-3 col-xs-3"></span>：
+          <label><input type="radio" id="option1_rdoname1" name="rdo1" value="" class="radio"/><span id="option1_optname1"></span></label>&nbsp;&nbsp;&nbsp;
+          <label><input type="radio" id="option1_rdoname2" name="rdo1" value="" class="radio"/><span id="option1_optname2"></span></label>&nbsp;&nbsp;&nbsp;
+          <label><input type="radio" id="option1_rdoname3" name="rdo1" value="" class="radio"/><span id="option1_optname3"></span></label>
+          <br>
+        </div>
+        <div id="option2" style="display: none">
+          <span id="option2_opttitle" class="col-sm-3 col-xs-3"></span>：
+          <label><input type="radio" id="option2_rdoname1" name="rdo2" value="" class="radio"/><span id="option2_optname1"></span></label>&nbsp;&nbsp;&nbsp;
+          <label><input type="radio" id="option2_rdoname2" name="rdo2" value="" class="radio"/><span id="option2_optname2"></span></label>&nbsp;&nbsp;&nbsp;
+          <label><input type="radio" id="option2_rdoname3" name="rdo2" value="" class="radio"/><span id="option2_optname3"></span></label>
+          <br>
+        </div>
+        <div id="option3" style="display: none">
+          <span id="option3_opttitle" class="col-sm-3 col-xs-3"></span>：
+          <label><input type="radio" id="option3_rdoname1" name="rdo3" value="" class="radio"/><span id="option3_optname1"></span></label>&nbsp;&nbsp;&nbsp;
+          <label><input type="radio" id="option3_rdoname2" name="rdo3" value="" class="radio"/><span id="option3_optname2"></span></label>&nbsp;&nbsp;&nbsp;
+          <label><input type="radio" id="option3_rdoname3" name="rdo3" value="" class="radio"/><span id="option3_optname3"></span></label>
+          <br>
+        </div>
+        <div id="option4" style="display: none">
+          <span id="option4_opttitle" class="col-sm-3 col-xs-3"></span>：
+          <label><input type="radio" id="option4_rdoname1" name="rdo4" value="" class="radio"/><span id="option4_optname1"></span></label>&nbsp;&nbsp;&nbsp;
+          <label><input type="radio" id="option4_rdoname2" name="rdo4" value="" class="radio"/><span id="option4_optname2"></span></label>&nbsp;&nbsp;&nbsp;
+          <label><input type="radio" id="option4_rdoname3" name="rdo4" value="" class="radio"/><span id="option4_optname3"></span></label>
+          <br>
+        </div>
+      </div>
+      <div id="confirmation" class="divcenter" style="display: none">
+        <h3>あなたは&nbsp;<span id="confirmation_no" class="nos"></span>番です</h3>
+        <div id="qcdemo1"></div>
+        <h4>※この画面は<span id="count">60</span>秒後に自動的に閉じられます。</h4>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div id="confirmation2" style="display: none">
+        <button type="button" class="btn btn-default btn-left" data-dismiss="modal">閉じる</button>
+      </div>
+      <div id="inputform2" style="display: ">
+        <button type="button" class="btn btn-default btn-left" data-dismiss="modal">Cancel</button>
+        <button id="modal-form-nsys-customer-save-btn" type="button" class="btn btn-primary" data-target="#modal-nsys-customer">ＯＫ</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

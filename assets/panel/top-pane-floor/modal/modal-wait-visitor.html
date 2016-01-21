@@ -1,0 +1,45 @@
+<div id= "modal-wait-visitor" class="modal fade" role="dialog" data-backdrop="static">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4 class="modal-title">待ち設定</h4>
+    </div>
+    <div class="modal-body">
+      <p class="message"><span class="seat-name"></span>に待たせます</p>
+      <form role="form" class="modal-form-wait-vis form-horizontal" >
+        <div class="form-group form-group-lg">
+          <label for="modal-form-wait-vis-number" class="col-sm-2 control-label">人数</label>
+          <div class="col-sm-8">
+            <select id="modal-form-wait-vis-number" class="form-wait-vis-number form-control"></select>
+            <span class="help-block">人数を選択して下さい。</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-form-wait-vis-name" class="col-sm-2 control-label">代表者</label>
+          <div class="col-sm-8">
+            <div class="input-group">
+              <input type="text" id='modal-form-wait-vis-name' class="form-control">
+              <span class="input-group-addon">様</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="modal-form-wait-vis-contact" class="col-sm-2 control-label">連絡先</label>
+          <div class="col-sm-8">
+            <div class="input-group">
+              <input type="text" id='modal-form-wait-vis-contact' class="form-control">
+            </div>
+            <span class="help-block">必要な場合は入力してください。</span>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      <button id="modal-form-wait-vis-save-btn" type="button" class="btn btn-primary" data-dismiss="modal" data-target="#modal-wait-visitor">保存</button>
+    </div>
+  </div>
+</div>
+</div>

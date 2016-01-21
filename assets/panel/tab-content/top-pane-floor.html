@@ -1,0 +1,42 @@
+    <div class="tab-pane fade" id="top-pane-floor">
+      <div class="col-sm-12">
+        <ul class="nav nav-pills">
+        </ul>
+      </div>
+      <div class="col-sm-12">
+        <p class="bg-info"><span id="current-local-time" ></span></p>
+      </div>
+      <div class="col-sm-8" id="visitor-seats-area" >
+        <!--<div class="col-sm-4 col-xs-4">
+          <p class="bg-info"><span id="current-local-time" ></span></p>
+          <div class="panel-group">
+            <div class="panel panel-primary">
+              <div id="new-visitor-drag" class="panel-heading ddui-waiting-visitor"><span class="glyphicon glyphicon-plus-sign">&nbsp;新　規 </a></div>
+            </div>
+          </div>
+          <p class="bg-info">待ち席</p>
+          <div class="panel-group" id="all_waiting_visitors"></div>
+        </div>-->
+        <div class="col-sm-12 col-xs-12 box_flo ratio-1_3">
+          <p class="bg-info">客席&nbsp;&nbsp;&nbsp;
+          <span class="glyphicon glyphicon-plus-sign"></span><a onclick='javascript:ks.seats.addSeat();return void(0);'>席追加</a>
+          <span class='pull-right'><span class="glyphicon glyphicon-refresh"></span><a onclick='javascript:ks.seats.initSeats();return void(0);'>座席再表示</a></span>
+          </p>
+          <div class="panel-group inner_rea" id="seat-accordion">
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-xs-4">
+        <p class="bg-info">キャスト
+          <span class='pull-right'><span class="glyphicon glyphicon-refresh"></span><a onclick='javascript:ks.cast.initCast();return void(0);'>キャスト再表示</a></span>
+        </p>
+        <div class="col-sm-12 col-xs-12 well well-sm box_flo2 ratio-1_3">
+          <div class="panel-group inner_flo" id="cast-accordion">
+            <div id="all_cast"></div>
+          </div>
+        </div>
+      </div>
+      <div class='footer'></div>
+      <div class='cast_dialog_area'></div>
+    </div>
+    <script>$(function(){ks.visitor.initNewVisBtn();if(!_top_pane_floor_load){_top_pane_floor_load=true;ks.seats.initSeats();ks.cast.initCast();}});</script>

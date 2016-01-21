@@ -1,0 +1,58 @@
+<div id= "modal-order-set" class="modal fade" role="dialog" data-backdrop="static">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4 class="modal-title">セット設定</h4>
+    </div>
+    <div class="modal-body">
+      <form role="form" class="modal-form-order-set form-horizontal" >
+        <div class="form-group form-group-lg">
+          <label for="modal-form-order-set-number" class="col-sm-2 control-label">人数</label>
+          <div class="col-sm-8">
+            <select id="modal-form-order-set-number" class="form-order-set-number form-control"></select>
+            <span class="help-block">人数を選択して下さい。</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-form-order-set-set-preset" class="col-sm-2 control-label">セット</label>
+          <div class="col-sm-8">
+            <select id="modal-form-order-set-set-preset" class="form-order-set-set-preset form-control"></select>
+            <span class="help-block">セットを選択すると時間と価格が入力されます。</span>
+          </div>
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="modal-form-order-set-minutes" class="col-sm-2 control-label">時間</label>
+          <div class="col-sm-8">
+            <div class="input-group">
+              <input type="text" id='modal-form-order-set-minutes' class="form-control">
+              <span class="input-group-addon">分</span>
+            </div>
+          </div>
+          <div class="col-sm-1">
+            <button class="btn_set_minutes_del"><span class="glyphicon glyphicon-remove-circle"></span></button>
+          </div>
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="modal-form-order-set-price" class="col-sm-2 control-label">価格</label>
+          <div class="col-sm-8">
+            <div class="input-group">
+              <input type="text" id='modal-form-order-set-price' class="form-control">
+              <span class="input-group-addon">円</span>
+            </div>
+            <span class="help-block">一人あたりの価格を入力してください。</span>
+          </div>
+          <div class="col-sm-1">
+            <button class="btn_set_price_del"><span class="glyphicon glyphicon-remove-circle"></span></button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default btn-left" data-dismiss="modal">Cancel</button>
+      <button id="modal-form-order-set-save-btn" type="button" class="btn btn-primary" data-dismiss="modal" data-target="#modal-order-set">保存</button>
+    </div>
+  </div>
+</div>
+</div>

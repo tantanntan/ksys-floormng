@@ -1,0 +1,194 @@
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <h2>KSYS</h2>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <ul id="globalTab" class="nav nav-tabs" role="tablist">
+    <li class="active">
+      <a href="#top-pane-floor" role="tab" data-toggle="tab">営業中</a>
+    </li>
+    <li>
+      <a href="#top-pane-presence" role="tab" data-toggle="tab">出退勤</a>
+    </li>
+    <li>
+      <a href="#top-pane-master" role="tab" data-toggle="tab">マスタ管理</a>
+    </li>
+    <li>
+      <a href="#top-pane-report" role="tab" data-toggle="tab">各種集計</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active in fade" id="top-pane-floor">
+      <div class="col-sm-12"><h6>営業中画面</h6></div>
+      <div class="col-sm-6">
+        <div class="col-sm-3">
+          <div class="panel-group" id="visitor-waiting-accordion">
+            <div><ul id="all_waiting_visitors"  class="list-unstyled sortable"></ul></div>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="panel-group" id="visitor-accordion">
+            <div ><ul id="all_seats"  class="list-unstyled sortable"></ul></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="col-sm-12">
+          <div class="panel-group" id="cast-accordion">
+            <div id="all_cast"></div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="panel-group" id="item-accordion">
+            <div id="all_item"></div>
+          </div>
+        </div>
+      </div>
+      <div class='footer'></div>
+      <div class='cast_dialog_area'></div>
+    </div>
+
+    <div class="tab-pane fade" id="top-pane-presence">
+      <h6>出退勤管理</h6>
+    </div>
+    <div class="tab-pane fade" id="top-pane-master">
+      <h6>マスタ管理</h6>
+    </div>
+    <div class="tab-pane fade" id="top-pane-report">
+      <h6>各種集計</h6>
+    </div>
+  </div>
+</div>
+</div>
+<!-- container -->
+<!-- Templates  -->
+<div id='widgetTemplates' style="display: none">
+  <!-- seated modal -->
+  <div class="modal fade seated-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title" id="myModalLabel">着席処理</h4>
+        </div>
+        <div class='modal-body'>
+          <p>着席させますか？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary seated">着席</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- seated modal -->
+<!-- unseated modal -->
+  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+  aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title" id="myModalLabel">退席処理</h4>
+        </div>
+        <div class='modal-body'>
+          <p>退席させますか？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary leave">退席</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- unseated modal -->
+  <!-- cast -->
+    <div class="castlady col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <a class="toggle" data-toggle="collapse" data-parent="#all_cast" href="">
+            <span class="cast-status"></span>
+            <span class='cast-name'>name</span>
+          </a>
+        </div>
+        <div id="" class="panel-collapse collapse">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-time cast-time">00:00</span>&nbsp;
+            <span class="point label">point</span><br/>
+            <div class="btn-group">
+              <button class="btn btn-default btn-sm" data-toggle="modal" data-target=".bs-example-modal-sm">
+                <span class="glyphicon glyphicon-thumbs-down leave">ペナルティ</span>
+              </button>
+              <button class="btn btn-default btn-sm" data-toggle="modal" data-target=".bs-example-modal-sm">
+                <span class="glyphicon glyphicon-flag leave">休憩</span>
+              </button>
+              <button class="btn btn-default btn-sm" data-toggle="modal" data-target=".bs-example-modal-sm">
+                <span class="glyphicon glyphicon-remove leave">退勤</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- cast -->
+  <!-- visitor -->
+  <li class='seat'>
+    <div class='col-sm-12'>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <a class="toggle" data-toggle="collapse" data-parent="#visitor-accordion" href="">
+            <span class="glyphicon glyphicon-user"></span>
+            <span class="table"></span>&nbsp;
+          </a>
+          <span class="vis-number label label-primary">5</span>&nbsp;
+          <span class="glyphicon glyphicon-time visitor-time"></span>&nbsp;
+          <span class="cast-needed-number badge pull-right">5</span>
+        </div>
+        <div id="" class="panel-collapse collapse">
+          <div class="panel-body">
+            <span class="glyphicon glyphicon-pencil visitor-amount"></span>
+          </div>
+          <ul class="attended list-group"></ul>
+        </div>
+      </div>
+    </div>
+  </li>
+  <!-- visitor waiting -->
+  <li class='visitor'>
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+      </div>
+    </div>
+  </li>
+  <!-- visitor waiting -->
+  
+  <!-- cast on visitor -->
+  <li class="cast-on-visitor list-group-item">
+    <span class="cast-name"></span>
+    <div class="btn-group pull-right">
+      <button class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-glass"></span>
+      </button>
+      <button class="btn btn-default btn-sm">
+        <span class="glyphicon glyphicon-heart"></span>
+      </button>
+      <button class="btn btn-default btn-sm" data-toggle="modal" data-target=".bs-example-modal-sm">
+        <span class="glyphicon glyphicon-remove leave"></span>
+      </button>
+    </div>
+  </li>
+  <!-- pop over -->
+  <div class="popover fade down in" style="display: block; top: 24px; left: 232px;">
+    <div class="arrow"></div>
+    <h3 class="popover-title"></h3>
+    <div class="popover-content"></div>
+    <div class="btn-group">
+      <button class="btn btn-default">本指名</button>
+      <button class="btn btn-default">場内指名</button>
+      <button class="btn btn-default">通常</button>
+    </div>
+  </div>
+</div>

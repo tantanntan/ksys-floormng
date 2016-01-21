@@ -1,0 +1,514 @@
+<div class="tab-pane fade" id="top-pane-stores">
+  <!-- 店舗管理 -->
+  <div id="middle-pane-master">
+  <h4>店舗管理</h4>
+    <div id="tenpolists"></div>
+    <input type="button" value="+" id="master-tenpo-add" class="addBtn"/>
+  </div>
+        
+  <!-- 店舗管理詳細 -->
+  <div id="middle-pane-master-detail" style="display: none">
+  <h4>店舗管理</h4>
+    <table>
+      <col width="100"><col width="800">
+      <tr><td><span>店舗名：</span></td><td><input type="text" id="master-tenpo-name" size="40" maxlength="20"/></td></tr>
+      <tr><td><span>住所：</span></td><td><input type="text" id="master-tenpo-address" size="40" maxlength="50"/></td></tr>
+      <tr><td><span>電話番号：</span></td><td><input type="text" id="master-tenpo-tel" size="40" maxlength="14"/></td></tr>
+      <tr>
+        <td>
+          <span>営業時間：</span>
+        </td>
+        <td>
+          <select id="master-tenpo-service-opening_h"></select>：<select id="master-tenpo-service-opening_m"></select>
+          ～
+          <select id="master-tenpo-service-closing_h"></select>：<select id="master-tenpo-service-closing_m"></select>
+        </td>
+      </tr>
+      <tr>
+        <td><span>営業曜日：</span></td>
+        <td>
+          <label><input type="checkbox" id="master-tenpo-week-mon" value="1" class="checkbox"/>月</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" id="master-tenpo-week-tue" value="2" class="checkbox"/>火</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" id="master-tenpo-week-wed" value="3" class="checkbox"/>水</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" id="master-tenpo-week-thu" value="4" class="checkbox"/>木</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" id="master-tenpo-week-fri" value="5" class="checkbox"/>金</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" id="master-tenpo-week-sat" value="6" class="checkbox"/>土</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" id="master-tenpo-week-sun" value="0" class="checkbox"/>日</label>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table>
+      <col width="100"><col width="200">
+      <tr><td><span>TAX：</span></td><td><input type="text" id="master-tenpo-tax" class="num" size="10" maxlength="4"/>%</td></tr>
+      <tr><td><span>カード手数料：</span></td><td><input type="text" id="master-tenpo-cardfee" class="num" size="10" maxlength="4"/>%</td></tr>
+    </table>
+    <br>
+    <table>
+      <col width="100"><col width="200">
+      <tr><td><span>福利厚生費：</span></td><td><input type="text" id="master-tenpo-welfare" class="num" size="10" maxlength="10"/>円/日</td></tr>
+      <tr><td><span>サービス料：</span></td><td><input type="text" id="master-tenpo-tax2" class="num" size="10" maxlength="4"/>%</td></tr>
+    </table>
+    <br>
+    <input type="button" value="登録" id="master-tenpo-detail-create" class="TBL_BLUE"/>
+    <input type="button" value="更新" id="master-tenpo-detail-update" class="TBL_BLUE"/>
+    &nbsp;&nbsp;&nbsp;<input type="button" value="キャンセル" id="master-tenpo-detail-cancel" class="TBL_BLUE"/>
+  </div>
+      
+  <!-- 店舗名表示 -->
+  <div id="master-ditail-tenpo-name"></div>
+  <br>
+      
+  <!-- その他メニュー -->
+  <div id="middle-pane-master-detail-menu" style="display: none">
+    <br/>
+    <h4><button class="master-detail-menu-button">給料計算方法の設定</button></h4>
+    <h4><button class="master-detail-menu-append">出退勤管理</button></h4>
+    <h4><button class="master-detail-menu-button">セット管理</button></h4>
+    <h4><button class="master-detail-menu-button">座席管理</button></h4>
+    <h4><button class="master-detail-menu-button">控除管理</button></h4>
+    <h4><button class="master-detail-menu-button">指名管理</button></h4>
+    <h4><button class="master-detail-menu-button">サービス管理</button></h4>
+    <h4><button class="master-detail-menu-button">ペナルティ管理</button></h4>
+    <h4><button class="master-detail-menu-button">商品管理</button></h4>
+    <h4><button class="master-detail-menu-button">商品種別管理</button></h4>
+    <br>
+    <button id="master-detail-menu-templates-copy" class="TBL_BLUE">テンプレート反映</button>&nbsp;&nbsp;&nbsp;
+    <button id="master-detail-menu-cancel" class="TBL_BLUE">戻る</button>
+  </div>
+  
+  <!-- 給料計算の方法 -->
+  <div id="middle-pane-master-salary" style="display: ">
+    <h4>給与計算方法の設定</h4>
+    <!-- TOP画面 -->
+    <div id="master_salary" style="display: none">
+      <div class="nodiv">
+        「<span><a href="#">時給スライド制</a></span>
+        <p class="arrow_box">キャストの給料を基本時給＋ポイント、キャリアによって決定します。</p>」&nbsp;か
+      </div>
+      <div class="nodiv">
+        「<span><a href="#">売り上げ歩合制</a></span>
+        <p class="arrow_box">キャストの給料を売り上げによって決定します。<br>キャストの売り上げ総額の何パーセントを給料とするかは、次の画面で設定します。</p>」&nbsp;かを選択してください。
+      </div>
+      <br><br>
+      <select class="master_salary_type">
+        <option value="0">時給スライド制</option>
+        <option value="1">売り上げ歩合制</option>
+      </select>
+      <br><br>
+      <button class='master_salary_next TBL_BLUE'>次へ</button>&nbsp;&nbsp;&nbsp;
+      <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+    </div>
+    
+    <!-- 時給スライド制画面 -->
+    <div id="master_salary_type0_1" style="display: none">
+      「時給スライド制」は、「基本時給」＋「スライド時給」でキャストの時給を計算します。<br>
+      「スライド時給」はキャストのポイント、キャリア（入店からの期間）別に設定することもできます。
+      <br><br>
+      <button class='master_salary_type0_prev TBL_BLUE'>戻る</button>&nbsp;&nbsp;&nbsp;
+      <button class='master_salary_type0_next TBL_BLUE'>次へ</button>&nbsp;&nbsp;&nbsp;
+      <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+    </div>
+    <!-- 時給スライド制画面2 -->
+    <div id="master_salary_type0_2" style="display: none">
+      全てのキャストに対する基本時給を設定してください。<br>
+      基本時給を設定しない場合、0を入力してください。
+      <br><br>
+      <input type="text" id="master_salary_type0_payhour" class="num" size="5" maxlength="5" value="0"/>円
+      <br><br>
+      <button class='master_salary_type0_prev2 TBL_BLUE'>戻る</button>&nbsp;&nbsp;&nbsp;
+      <button class='master_salary_type0_next2 TBL_BLUE'>次へ</button>&nbsp;&nbsp;&nbsp;
+      <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+    </div>
+    <!-- 時給スライド制画面3 -->
+    <div id="master_salary_type0_3" style="display: none">
+      スライド時給を設定します。<br>
+      時給を決める要素を選択してください。
+      <br><br>
+      <input type="checkbox" class="master_salary_type0_element1 checkbox" id="i1" value="1"><label for="i1">ポイント</label></input><br><br>
+      <input type="checkbox" class="master_salary_type0_element2 checkbox" id="i2" value="1"><label for="i2">キャリア</label></input><br><br>
+      <button class='master_salary_type0_prev3 TBL_BLUE'>戻る</button>&nbsp;&nbsp;&nbsp;
+      <button class='master_salary_type0_next3 TBL_BLUE'>次へ</button>&nbsp;&nbsp;&nbsp;
+      <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+    </div>
+    <!-- 時給スライド制画面4 -->
+    <div id="master_salary_type0_4" style="display: none">
+      選択された各要素に対する時給を設定してください。
+      <br><br>
+      <div id="master_salary_type0_element1_div" style="display: none">
+        <table id="master_salary_type0_element1_table" border="1">
+          <col width="30"><col width="400">
+          <tr>
+            <td class="noborder2" nowrap><br></td>
+            <th class="TBL_BLUE"><span class="master_salary_type0_element1_name"></span></th>
+          </tr>
+          <!-- templates -->
+          <tr id="master_salary_type0_element1_template" style="display: none">
+            <td class="noborder2" nowrap>
+              <input type="button" class="master_salary_type0_element1_del delBtn" value="×"></input>
+            </td>
+            <td>
+              <input type="text" class="master_salary_type0_element1_from num" size="8" maxlength="8"/>
+              ～
+              <input type="text" class="master_salary_type0_element1_to num" size="8" maxlength="8"/>
+              まで&nbsp;&nbsp;&nbsp;
+              時給
+              <input type="text" class="master_salary_type0_element1_payhour num" size="8" maxlength="8"/>
+              円
+            </td>
+          </tr>
+          <!-- templates end-->
+        </table>
+        <div>
+          <input type="button" class="master_salary_type0_element1_add addBtn" value="+"></input>
+        </div>
+        <br><br>
+      </div>
+      <div id="master_salary_type0_element2_div" style="display: none">
+        <table id="master_salary_type0_element2_table" border="1">
+          <col width="30"><col width="400">
+          <tr>
+            <td class="noborder2" nowrap><br></td>
+            <th class="TBL_BLUE"><span class="master_salary_type0_element2_name"></span></th>
+          </tr>
+          <!-- templates -->
+          <tr id="master_salary_type0_element2_template" style="display: none">
+            <td class="noborder2" nowrap>
+              <input type="button" class="master_salary_type0_element2_del delBtn" value="×"></input>
+            </td>
+            <td>
+              <input type="text" class="master_salary_type0_element2_from num" size="4" maxlength="2"/>
+              ～
+              <input type="text" class="master_salary_type0_element2_to num" size="4" maxlength="2"/>
+              ヶ月まで&nbsp;&nbsp;&nbsp;
+              時給
+              <input type="text" class="master_salary_type0_element2_payhour num" size="8" maxlength="8"/>
+              円
+            </td>
+          </tr>
+          <!-- templates end-->
+        </table>
+        <div>
+          <input type="button" class="master_salary_type0_element2_add addBtn" value="+"></input>
+        </div>
+        <br><br>
+      </div>
+      <button class='master_salary_type0_prev4 TBL_BLUE'>戻る</button>&nbsp;&nbsp;&nbsp;
+      <button class='master_salary_type0_next4 TBL_BLUE'>次へ</button>&nbsp;&nbsp;&nbsp;
+      <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+    </div>
+    <!-- 時給スライド制画面5 -->
+    <div id="master_salary_type0_5" style="display: none">
+      以下の内容でスライド時給を設定します。<br>
+      よろしいですか？
+      <br><br>
+      <span class="master_salary_type0_setting"></span>
+      <br><br>
+      <button class='master_salary_type0_prev5 TBL_BLUE'>戻る</button>&nbsp;&nbsp;&nbsp;
+      <button class='master_salary_type0_ok TBL_BLUE'>完了</button>&nbsp;&nbsp;&nbsp;
+      <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+    </div>
+    
+    <!-- 売り上げ歩合制画面 -->
+    <div id="master_salary_type1_1" style="display: none">
+      売り上げの何パーセントをキャストの給料とするかを設定してください。
+      <br><br>
+      <input type="text" id="master_salary_type1_percentage" class="num" size="3" maxlength="3"/>％
+      <br><br>
+      <button class='master_salary_type1_prev TBL_BLUE'>戻る</button>&nbsp;&nbsp;&nbsp;
+      <button class='master_salary_type1_next TBL_BLUE'>次へ</button>&nbsp;&nbsp;&nbsp;
+      <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+    </div>
+    <!-- 売り上げ歩合制画面2 -->
+    <div id="master_salary_type1_2" style="display: none">
+      「売り上げ歩合制」で、売り上げの<span id="master_salary_type1_percentage2"></span>％をキャストの給料とします。<br>
+      よろしいですか？
+      <br><br>
+      <button class='master_salary_type1_prev2 TBL_BLUE'>戻る</button>&nbsp;&nbsp;&nbsp;
+      <button class='master_salary_type1_ok TBL_BLUE'>完了</button>&nbsp;&nbsp;&nbsp;
+      <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+    </div>
+  </div>
+  
+  <!-- 出退勤管理 -->
+  <div id="middle-pane-master-append" style="display: none">
+    <h4>出退勤管理</h4>
+    <div class="master-table-append">
+      <div class="master-table-rowhead-append">
+        <div></div>
+        <div>ステータス名</div>
+        <div>控除額</div>
+        <div>備考</div>
+      </div>
+    </div>
+    <button id='master-tenpo-detail-append-create' class="TBL_BLUE">登録</button>&nbsp;&nbsp;&nbsp;
+    <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+  </div>
+  
+  <!-- セット管理 -->
+  <div id="middle-pane-master-set" style="display: none">
+    <h4>セット管理</h4>
+    <div class="master-table">
+      <div class="master-table-rowhead">
+        <div></div>
+        <div>セット名</div>
+        <div>セット料金</div>
+        <div>セット時間</div>
+        <div>備考</div>
+      </div>
+    </div>
+    <button id='master-tenpo-detail-set-create' class="TBL_BLUE">登録</button>&nbsp;&nbsp;&nbsp;
+    <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+  </div>
+  
+  <!-- 座席管理 -->
+  <div id="middle-pane-master-seat" style="display: none">
+    <h4>座席管理</h4>
+    <div class="master-table-seat">
+      <div class="master-table-rowhead-seat">
+        <div></div>
+        <div>座席名</div>
+        <div>人数</div>
+        <div>待ち席</div>
+        <div>備考</div>
+      </div>
+    </div>
+    <button id='master-tenpo-detail-seat-create' class="TBL_BLUE">登録</button>&nbsp;&nbsp;&nbsp;
+    <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+  </div>
+  
+  <!-- 控除管理 -->
+  <div id="middle-pane-master-deduction" style="display: none">
+    <h4>控除管理</h4>
+    <div class="master-table-deduction">
+      <div class="master-table-rowhead-deduction">
+        <div></div>
+        <div>控除名</div>
+        <div>控除率(%)</div>
+        <div>備考</div>
+      </div>
+    </div>
+    <button id='master-tenpo-detail-deduction-create' class="TBL_BLUE">登録</button>&nbsp;&nbsp;&nbsp;
+    <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+  </div>
+  
+  <!-- 指名管理 -->
+  <div id="middle-pane-master-choose" style="display: none">
+    <h4>指名管理</h4>
+    <div class="master-table-choose">
+      <div class="master-table-rowhead-choose">
+        <div></div>
+        <div>指名種別</div>
+        <div>販売価格</div>
+        <div>ポイント</div>
+        <div>キャッシュバック</div>
+        <div>備考</div>
+      </div>
+    </div>
+    <button id='master-tenpo-detail-choose-create' class="TBL_BLUE">登録</button>&nbsp;&nbsp;&nbsp;
+    <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+  </div>
+  
+  <!-- サービス管理 -->
+  <div id="middle-pane-master-service" style="display: none">
+    <h4>サービス管理</h4>
+    <div class="master-table-service">
+      <div class="master-table-rowhead-service">
+        <div></div>
+        <div>サービス名</div>
+        <div>販売価格</div>
+        <div>ポイント</div>
+        <div>キャッシュバック</div>
+        <div>備考</div>
+      </div>
+    </div>
+    <button id='master-tenpo-detail-service-create' class="TBL_BLUE">登録</button>&nbsp;&nbsp;&nbsp;
+    <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+  </div>
+  
+  <!-- ペナルティ管理 -->
+  <div id="middle-pane-master-penalty" style="display: none">
+    <h4>ペナルティ管理</h4>
+    <div class="master-table-penalty">
+      <div class="master-table-rowhead-penalty">
+        <div></div>
+        <div>ペナルティ名</div>
+        <div>差引ポイント</div>
+        <div>控除額</div>
+        <div>備考</div>
+      </div>
+    </div>
+    <button id='master-tenpo-detail-penalty-create' class="TBL_BLUE">登録</button>&nbsp;&nbsp;&nbsp;
+    <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+  </div>
+  
+  <!-- 商品管理 -->
+  <div id="middle-pane-master-product" style="display: none">
+    <h4>商品管理</h4>
+    <div class="master-table-product">
+      <div class="master-table-rowhead-product">
+        <div></div>
+        <div>商品名</div>
+        <div>商品種別</div>
+        <div>クイックオーダー</div>
+        <div>販売価格</div>
+        <div>ポイント</div>
+        <div>キャッシュバック</div>
+        <div>備考</div>
+      </div>
+    </div>
+    <button id='master-tenpo-detail-product-create' class="TBL_BLUE">登録</button>&nbsp;&nbsp;&nbsp;
+    <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+  </div>
+  
+  <!-- 商品種別(temp) -->
+  <div id="middle-pane-master-productType" style="display: none">
+    <h4>商品種別管理</h4>
+    <div class="master-table-productType">
+      <div class="master-table-rowhead-productType">
+        <div></div>
+        <div>商品種別</div>
+        <div>即時決済</div>
+      </div>
+    </div>
+    <button id='master-tenpo-detail-productType-create' class="TBL_BLUE">登録</button>&nbsp;&nbsp;&nbsp;
+    <button class='master-detail-menu-detail-cancel-button TBL_BLUE'>キャンセル</button>
+  </div>
+  
+  <div id="templates" style="display: none">
+    <!-- 店舗一覧templates -->
+    <div id="tenpo_template">
+      <input id="delete_button" type="button" value="×" class="delBtn"/>
+      <span id="tenpoDetailName">templateTenpoName</span>
+      <input id="detail_button" type="button" value="店舗情報修正" class="TBL_BLUE"/>
+      <input id="etcmenu_button" type="button" value="その他管理" class="TBL_BLUE"/>
+    </div>
+    <!-- 店舗一覧templates end -->
+    <!-- 店舗詳細一覧templates -->
+    <div id="set_template">
+      <div class="master-table-row_template">
+        <div><button class="set_del">×</button></div>
+        <div><input/></div>
+        <div><input/></div>
+        <div><input/></div>
+        <div><input/></div>
+        <div><input/></div>
+        <div><input/></div>
+        <div><input/></div>
+      </div>
+    </div>
+    <!-- 店舗一覧templates end -->
+    <!-- 商品管理用templates -->
+    <div id="set_template2">
+      <div class="master-table-row_template2">
+        <div><button class="set_del">×</button></div>
+        <div><input/></div>
+        <div>
+          <select id="productTypePulldown"></select>
+        </div>
+        <div align="center">
+          <input type="checkbox" class="checkbox" value="1"/>
+        </div>
+        <div><input/></div>
+        <div><input/></div>
+        <div><input/></div>
+        <div><input/></div>
+      </div>
+    </div>
+    <!-- 商品管理用templates end -->
+    <!-- 商品管理用(マスタ)templates -->
+    <div id="set_template2_m">
+      <div class="master-table-row_template2_m">
+        <div><button class="set_del">×</button></div>
+        <div><input/></div>
+        <div>
+          <select id="productTypePulldown2"></select>
+        </div>
+        <div align="center">
+          <input type="checkbox" class="checkbox" value="1"/>
+        </div>
+        <div><input/></div>
+        <div><input/></div>
+        <div><input/></div>
+        <div><input/></div>
+      </div>
+    </div>
+    <!-- 商品管理用(マスタ)templates end -->
+  </div>
+</div>
+<script>
+  $(function(){
+    // 表示切替
+    $('#top-pane-stores').children().css({"display": "none" });
+    $('#top-pane-stores').children("#middle-pane-master").css({"display": "inline" });
+    $('#master-tenpo-detail-create').css({"display": "none" });
+    $('#master-tenpo-detail-update').css({"display": "none" });
+    
+    getPulldown_h($('#master-tenpo-service-opening_h'));
+	  getPulldown_m($('#master-tenpo-service-opening_m'));
+	  getPulldown_h($('#master-tenpo-service-closing_h'));
+	  getPulldown_m($('#master-tenpo-service-closing_m'));
+	  
+	  $('span').hover(function() {
+    $(this).next('p').show();
+    }, function(){
+      $(this).next('p').hide();
+    });
+	  
+	  // プルダウン時間範囲取得
+	  function getPulldown_h(obj){
+	    var o_hour = '<option value=""></option>';
+	    var hour = "";
+	    for( var i=0; i<36; i++){
+	      if( i < 10) {
+	        hour = "0" + i;
+	      } else {
+	        hour = i;
+	      }
+	      o_hour = o_hour + '<option value="' + hour + '">' + hour + '</option>';
+	    }
+	    obj.append(o_hour);
+	  }
+	  
+	  
+	  // プルダウン分範囲取得
+	  function getPulldown_m(obj){
+	    var o_min = '<option value=""></option>';
+	    var min = "";
+	    for( var i=0; i<60; i++){
+	      if( i < 10) {
+	        min = "0" + i;
+	      } else {
+	        min = i;
+	      }
+	      o_min = o_min + '<option value="' + min + '">' + min + '</option>';
+	    }
+	    obj.append(o_min);
+	  }
+  });
+  
+  if(!_top_pane_stores_load){
+    _top_pane_stores_load=true;
+    window.ks.masterDetail.loaded(getParam('companyId'));
+  }
+  
+  function getParam(key) {
+      
+      var url = location.href;
+      var splitedUrl = url.split('?');
+      if(splitedUrl[1]) {
+          
+          var query = splitedUrl[1];
+          var parameters = query.split('&');
+          for( var i = 0; i < parameters.length; i++ ) {
+              
+              var parts = parameters[i].split('=');
+              if(parts[0] && parts[1] && parts[0] == key) {
+                  return parts[1];
+              }
+          }
+      }
+      
+      return null;
+  }
+</script>

@@ -1,0 +1,352 @@
+.master-detail-menu-button,.master-detail-menu-button2,.master-detail-menu-append,.master-detail-menu-append2 { 
+  margin-top:10px; 
+  padding: 0;
+  background: #FFF;
+  border: 0px;
+  color:blue;
+  text-decoration:underline;
+  cursor:pointer;
+  text-align:left;
+}
+/****** 店舗一覧 ******/
+#tenpolists{
+  display:table;
+}
+#tenpolists>div{
+  display:table-row;
+  white-space:nowrap;
+}
+#tenpolists>div>input,#tenpolists>div>span,#master-tenpo-add{
+  display:table-cell;
+  margin:5px;
+}
+
+/****** 給与計算方法 ******/
+.arrow_box {
+  display: none;
+  position: absolute;
+  padding: 16px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;  
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+}
+
+.arrow_box:after {
+  position: absolute;
+  bottom: 100%;
+  left: 15%;
+  width: 0;
+  height: 0;
+  margin-left: -10px;
+  border: solid transparent;
+  border-color: rgba(51, 51, 51, 0);
+  border-bottom-color: #333;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+
+/****** 出退勤管理 ******/
+.master-table-append,.master-table-append2{
+  display:table;
+}
+.master-table-rowhead-append,.master-table-rowhead-append2,.master-table-row-append,.master-table-row-append2{
+  display:table-row;
+  border-bottom:1px solid #CCC;
+  white-space:nowrap;
+}
+.master-table-rowhead-append>div,.master-table-rowhead-append2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  color:white;
+  background-color:blue;
+}
+.master-table-row-append>div,.master-table-row-append2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  background-color:#eee;
+}
+/**  最初の列にのみ適用 **/
+.master-table-rowhead-append>div:first-child,.master-table-rowhead-append2>div:first-child,.master-table-row-append>div:first-child,.master-table-row-append2>div:first-child{
+  background-color:white;
+}
+/** 最後の行 **/
+.master-table-rowfoot-append,.master-table-rowfoot-append2{
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+}
+
+/****** セット管理 ******/
+.master-table,.master-table2{
+  display:table;
+}
+.master-table-rowhead,.master-table-rowhead2,.master-table-row,.master-table-row2{
+  display:table-row;
+  border-bottom:1px solid #CCC;
+  white-space:nowrap;
+}
+.master-table-rowhead>div,.master-table-rowhead2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  color:white;
+  background-color:blue;
+}
+.master-table-row>div,.master-table-row2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  background-color:#eee;
+}
+/**  最初の列にのみ適用 **/
+.master-table-rowhead>div:first-child,.master-table-rowhead2>div:first-child,.master-table-row>div:first-child,.master-table-row2>div:first-child{
+  background-color:white;
+}
+/** 最後の行 **/
+.master-table-rowfoot,.master-table-rowfoot2{
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+}
+/**
+// 最後の列にのみ適用
+.master-table-rowhead:last-child>div,.master-table-row>div:last-child{
+  width:200px;
+}
+**/
+
+/****** 座席管理 ******/
+.master-table-seat,.master-table-seat2{
+  display:table;
+}
+.master-table-rowhead-seat,.master-table-rowhead-seat2,.master-table-row-seat,.master-table-row-seat2{
+  display:table-row;
+  border-bottom:1px solid #CCC;
+  white-space:nowrap;
+}
+.master-table-rowhead-seat>div,.master-table-rowhead-seat2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  color:white;
+  background-color:blue;
+}
+.master-table-row-seat>div,.master-table-row-seat2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  background-color:#eee;
+}
+/**  最初の列にのみ適用 **/
+.master-table-rowhead-seat>div:first-child,.master-table-rowhead-seat2>div:first-child,.master-table-row-seat>div:first-child,.master-table-row-seat2>div:first-child{
+  background-color:white;
+}
+/** 最後の行 **/
+.master-table-rowfoot-seat,.master-table-rowfoot-seat2{
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+}
+
+/****** 控除管理 ******/
+.master-table-deduction,.master-table-deduction2{
+  display:table;
+}
+.master-table-rowhead-deduction,.master-table-rowhead-deduction2,.master-table-row-deduction,.master-table-row-deduction2{
+  display:table-row;
+  border-bottom:1px solid #CCC;
+  white-space:nowrap;
+}
+.master-table-rowhead-deduction>div,.master-table-rowhead-deduction2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  color:white;
+  background-color:blue;
+}
+.master-table-row-deduction>div,.master-table-row-deduction2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  background-color:#eee;
+}
+/**  最初の列にのみ適用 **/
+.master-table-rowhead-deduction>div:first-child,.master-table-rowhead-deduction2>div:first-child,.master-table-row-deduction>div:first-child,.master-table-row-deduction2>div:first-child{
+  background-color:white;
+}
+/** 最後の行 **/
+.master-table-rowfoot-deduction,.master-table-rowfoot-deduction2{
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+}
+
+/****** 指名管理 ******/
+.master-table-choose,.master-table-choose2{
+  display:table;
+}
+.master-table-rowhead-choose,.master-table-rowhead-choose2,.master-table-row-choose,.master-table-row-choose2{
+  display:table-row;
+  border-bottom:1px solid #CCC;
+  white-space:nowrap;
+}
+.master-table-rowhead-choose>div,.master-table-rowhead-choose2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  color:white;
+  background-color:blue;
+}
+.master-table-row-choose>div,.master-table-row-choose2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  background-color:#eee;
+}
+/**  最初の列にのみ適用 **/
+.master-table-rowhead-choose>div:first-child,.master-table-rowhead-choose2>div:first-child,.master-table-row-choose>div:first-child,.master-table-row-choose2>div:first-child{
+  background-color:white;
+}
+/** 最後の行 **/
+.master-table-rowfoot-choose,.master-table-rowfoot-choose2{
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+}
+
+/****** サービス管理 ******/
+.master-table-service,.master-table-service2{
+  display:table;
+}
+.master-table-rowhead-service,.master-table-rowhead-service2,.master-table-row-service,.master-table-row-service2{
+  display:table-row;
+  border-bottom:1px solid #CCC;
+  white-space:nowrap;
+}
+.master-table-rowhead-service>div,.master-table-rowhead-service2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  color:white;
+  background-color:blue;
+}
+.master-table-row-service>div,.master-table-row-service2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  background-color:#eee;
+}
+/**  最初の列にのみ適用 **/
+.master-table-rowhead-service>div:first-child,.master-table-rowhead-service2>div:first-child,.master-table-row-service>div:first-child,.master-table-row-service2>div:first-child{
+  background-color:white;
+}
+/** 最後の行 **/
+.master-table-rowfoot-service,.master-table-rowfoot-service2{
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+}
+
+/****** ペナルティ管理 ******/
+.master-table-penalty,.master-table-penalty2{
+  display:table;
+}
+.master-table-rowhead-penalty,.master-table-rowhead-penalty2,.master-table-row-penalty,.master-table-row-penalty2{
+  display:table-row;
+  border-bottom:1px solid #CCC;
+  white-space:nowrap;
+}
+.master-table-rowhead-penalty>div,.master-table-rowhead-penalty2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  color:white;
+  background-color:blue;
+}
+.master-table-row-penalty>div,.master-table-row-penalty2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  background-color:#eee;
+}
+/**  最初の列にのみ適用 **/
+.master-table-rowhead-penalty>div:first-child,.master-table-rowhead-penalty2>div:first-child,.master-table-row-penalty>div:first-child,.master-table-row-penalty2>div:first-child{
+  background-color:white;
+}
+/** 最後の行 **/
+.master-table-rowfoot-penalty,.master-table-rowfoot-penalty2{
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+}
+
+/****** 商品管理 ******/
+.master-table-product,.master-table-product2{
+  display:table;
+}
+.master-table-rowhead-product,.master-table-rowhead-product2,.master-table-row-product,.master-table-row-product2{
+  display:table-row;
+  border-bottom:1px solid #CCC;
+  white-space:nowrap;
+}
+.master-table-rowhead-product>div,.master-table-rowhead-product2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  color:white;
+  background-color:blue;
+}
+.master-table-row-product>div,.master-table-row-product2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  background-color:#eee;
+}
+/**  最初の列にのみ適用 **/
+.master-table-rowhead-product>div:first-child,.master-table-rowhead-product2>div:first-child,.master-table-row-product>div:first-child,.master-table-row-product2>div:first-child{
+  background-color:white;
+}
+/** 最後の行 **/
+.master-table-rowfoot-product,.master-table-rowfoot-product2{
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+}
+
+/****** 商品種別管理(temp) ******/
+.master-table-productType,.master-table-productType2{
+  display:table;
+}
+.master-table-rowhead-productType,.master-table-rowhead-productType2,.master-table-row-productType,.master-table-row-productType2{
+  display:table-row;
+  border-bottom:1px solid #CCC;
+  white-space:nowrap;
+}
+.master-table-rowhead-productType>div,.master-table-rowhead-productType2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  color:white;
+  background-color:blue;
+}
+.master-table-row-productType>div,.master-table-row-productType2>div {
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+  background-color:#eee;
+}
+/**  最初の列にのみ適用 **/
+.master-table-rowhead-productType>div:first-child,.master-table-rowhead-productType2>div:first-child,.master-table-row-productType>div:first-child,.master-table-row-productType2>div:first-child{
+  background-color:white;
+}
+/** 最後の行 **/
+.master-table-rowfoot-productType,.master-table-rowfoot-productType2{
+  display:table-cell;
+  margin:5px;
+  padding:5px;
+}
