@@ -1,11 +1,38 @@
-<form action="/login" method="post">  
+<form action="/login" method="post" class="form-horizontal ">
+<div class="form-group">
+  <div class="input-group input-group-lg">
+    <div class="col-sm-8">
+      <label>username:</label>
+      <input name="username" type="text" class="form-control" placeholder="ユーザ名：">
+    </div>
+  </div>
+  <div class="input-group input-group-lg">
+    <div class="col-sm-8">
+      <label>password:</label>
+    <input name="password" type="password" class="form-control" placeholder="パスワード：" >
+    </div>
+  </div>
+  
+  <div class="input-group input-group-lg">
+    <div class="col-sm-8">
+      <label>shop:</label>
+      <select id="tenponame" class="form-control" ></select>
+    <input type="hidden" name="shopId" id="shopId" value="" />
+    </div>
+  </div>
+  <div class="input-group input-group-lg">
+    <div class="col-sm-8">
+      <button type="submit" id='btn_submit' class="btn btn-primary btn-lg btn-block">ログイン</button>
+    </div>
+  </div>
+</div>
+<!--
 <div class="login">  
     login: <input type="text" name="username" placeholder="Input Login ID" value="suzuki" /> <br/><br/>
     password: <input type="password" name="password" placeholder="Input Login Password" value="suzuki" /><br/><br/>
     店舗:<select id="tenponame"></select><br/><br/>
-    <input type="hidden" name="shopId" id="shopId" value="" />
-    <button type="submit" id='btn_submit' class="TBL_BLUE">ログイン</button>
-</div>  
+    <input type="hidden" name="shopId" id="shopId" value="" /> -->
+
 </form>
 <script>
   $(function(){

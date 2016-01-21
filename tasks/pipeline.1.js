@@ -20,10 +20,8 @@
 var cssFilesToInject = [
     'linker/jquery*/*.css',
     'linker/**/jquery*.css',
-    'bs/**/*.css',
-    'bs/**/*.map', 
-    'bs/fonts/*'
-    ];
+    'linker/**/*.css',
+    'linker/bootstrap/*.css' ];
 
 
 // Client-side javascript files to inject in order
@@ -59,7 +57,7 @@ var cssFilesToInject = [
     // A simpler boilerplate library for getting you up and running w/ an
     // automatic listener for incoming messages from Socket.io.
     // *->    put other dependencies here   <-*
-    'linker/js/jquery-2*.jsx',
+    'linker/js/jquery-1*.js',
     'linker/js/jquery-ui-*.js',
     'linker/js/jquery.ui.touch*.js',
     'linker/js/spin/spin*.js',
@@ -67,9 +65,8 @@ var cssFilesToInject = [
 
     'linker/js/ks/kt.*.js',
     'linker/js/app.js',
-    'linker/js/moment/*',
     // All of the rest of your app scripts imported here
-    'bs/**/*.js'
+    'linker/**/*.js'
   ];
 
 

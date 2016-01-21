@@ -5,7 +5,19 @@
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+<style>
+  .reset-box-sizing {
+  &,
+  *,
+  *:before,
+  *:after {
+    .box-sizing(content-box);
+  }
+}
+.element {
+  .reset-box-sizing();
+}
+</style>
     
     <!--  
         Stylesheets and Preprocessors
@@ -59,7 +71,14 @@
     <!--SCRIPTS END-->
   </head>
   <body>
+<div class="container-fluid">
+    <div class="jumbotron text-center">
+<h1>KSYS DEMO</h1><p>floor manage application.</p>
+  </div>
     <%- body %>
+</div>
+
+
 
     <!--TEMPLATES-->
     

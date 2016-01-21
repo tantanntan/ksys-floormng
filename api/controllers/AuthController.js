@@ -125,7 +125,7 @@ module.exports = {
     login: function (req, res) {
     
         // ログイン画面表示
-        return res.view();
+        return res.view({ layout: 'layout_nologin' });
     },
     
     

@@ -38,7 +38,12 @@ module.exports.routes = {
   
   'get /login': {
     controller: 'auth',
-    action: 'login'
+    action: 'login',
+  },
+  '/login*':{
+      locals: {
+         layout: 'layout_nologin'
+      }
   },
   
   'get /nlogin': {
