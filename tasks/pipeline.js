@@ -20,10 +20,15 @@
 var cssFilesToInject = [
     'linker/jquery*/*.css',
     'linker/**/jquery*.css',
+<<<<<<< HEAD
     'bs/**/*.css',
     'bs/**/*.map', 
     'bs/fonts/*'
     ];
+=======
+    'linker/**/*.css',
+    'linker/bootstrap/*.css' ];
+>>>>>>> 77b3dde41e014fe5c4f89919ca28eaaa14b61609
 
 
 // Client-side javascript files to inject in order
