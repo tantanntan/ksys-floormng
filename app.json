@@ -1,0 +1,14 @@
+{
+  "name": "ksys-floormng-review",
+  "description": "",
+  "scripts": {
+  },
+  "env": {
+    "MONGOLAB_URI": {
+      "required": true
+    }
+  },
+  "addons": [
+    "papertrail"
+  ]
+}
