@@ -1,0 +1,121 @@
+<div class="tab-pane fade" id="top-pane-cast">
+  <h4>キャスト管理</h4>
+  <span class="glyphicon glyphicon-refresh"></span><a id='cast_refresh' onclick='return void(0);'>再表示</a>
+  <div class="box ratio-1_1">
+    <div id="all_castmaster" class="inner">
+  <table id="castmaster_table" class="table table-bordered">
+    <tr class="bg-primary">
+      <th><br></th>
+      <th>本名</th>
+      <th>源氏名</th>
+      <th>所属店舗</th>
+      <th nowrap>基本時給</th>
+      <th>送り賃</th>
+      <th>入店日</th>
+      <th>月</th>
+      <th>火</th>
+      <th>水</th>
+      <th>木</th>
+      <th>金</th>
+      <th>土</th>
+      <th>日</th>
+      <th>標準出勤時間</th>
+      <th>標準退勤時間</th>
+      <th>誕生日</th>
+      <th>退店日</th>
+      <th>住所</th>
+      <th>電話番号</th>
+      <th>メールアドレス</th>
+    </tr>
+    <!-- キャストマスタtemplates -->
+    <tr id="castmaster_template" style="display: none">
+      <td class="noborder2" nowrap>
+        <button class="btn_castmaster_del"><span class="glyphicon glyphicon-remove-sign"></span></button>
+      </td>
+      <td nowrap>
+        <input type="text" class="castmaster_truename noborder" size="11" maxlength="20" value=""></input>
+        <input type="hidden" class="castmaster_c_id" value=""></input>
+        <input type="hidden" class="castmaster_t_id" value=""></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="castmaster_castname noborder" size="8" maxlength="20" value=""></input>
+      </td>
+      <td nowrap>
+        <select class="castmaster_t_name"></select>
+      </td>
+      <td nowrap>
+        <input type="text" class="castmaster_basehour num noborder" size="4" maxlength="6" value=""></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="castmaster_trans num noborder" size="4" maxlength="6" value=""></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="castmaster_startday noborder" size="9" maxlength="10" value="" readOnly></input>
+        <button class="btn_castmaster_startday_del"><span class="glyphicon glyphicon-remove-circle"></span></button>
+      </td>
+      <td align="center" nowrap>
+        <input type="checkbox" class="castmaster_mon checkbox" value="1"></input>
+      </td>
+      <td align="center" nowrap>
+        <input type="checkbox" class="castmaster_tue checkbox" value="2"></input>
+      </td>
+      <td align="center" nowrap>
+        <input type="checkbox" class="castmaster_wed checkbox" value="3"></input>
+      </td>
+      <td align="center" nowrap>
+        <input type="checkbox" class="castmaster_thu checkbox" value="4"></input>
+      </td>
+      <td align="center" nowrap>
+        <input type="checkbox" class="castmaster_fri checkbox" value="5"></input>
+      </td>
+      <td align="center" nowrap>
+        <input type="checkbox" class="castmaster_sat checkbox" value="6"></input>
+      </td>
+      <td align="center" nowrap>
+        <input type="checkbox" class="castmaster_sun checkbox" value="0"></input>
+      </td>
+      <td nowrap>
+        <select class="castmaster_time_fr_h noborder"></select>：<select class="castmaster_time_fr_m noborder"></select>
+      </td>
+      <td nowrap>
+        <select class="castmaster_time_to_h noborder"></select>：<select class="castmaster_time_to_m noborder"></select>
+      </td>
+      <td nowrap>
+        <input type="text" class="castmaster_birthday noborder" size="9" maxlength="10" value="" readOnly></input>
+        <button class="btn_castmaster_birthday_del"><span class="glyphicon glyphicon-remove-circle"></span></button>
+      </td>
+      <td nowrap>
+        <input type="text" class="castmaster_endday noborder" size="9" maxlength="10" value="" readOnly></input>
+        <button class="btn_castmaster_endday_del"><span class="glyphicon glyphicon-remove-circle"></span></button>
+      </td>
+      <td nowrap>
+        <input type="text" class="castmaster_address noborder" size="20" maxlength="100" value=""></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="castmaster_tel noborder" size="12" maxlength="15" value=""></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="castmaster_mail noborder" size="16" maxlength="40" value=""></input>
+      </td>
+    </tr>
+    <!-- キャストマスタtemplates end-->
+  </table>
+  <div>
+    <input type="button" id="btn_castmaster_add" class="addBtn" value="+"></input>
+  </div>
+    </div>
+  <div>
+  <br>
+  <div>
+    <input type="button" id="btn_castmaster_create" class="TBL_BLUE" value="登録"></input>
+  </div>
+</div>
+<script>
+  $(function(){
+    
+    if(!_top_pane_ready_load){
+      _top_pane_ready_load=true;
+      window.ks.main.loaded();
+    }
+  });
+</script>

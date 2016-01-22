@@ -1,0 +1,151 @@
+/**
+ * app.js
+ *
+ */
+(function(io) {
+
+  // as soon as this file is loaded, connect automatically,
+  //TODO:namespace,room
+  var socket = io.connect();
+
+  var kscast = window.ks.cast;
+  var ksvisitor = window.ks.visitor;
+  var ksseats = window.ks.seats;
+
+  if (typeof console !== 'undefined') {
+    log('Connecting to Server...');
+  }
+
+  socket.on('connect', function socketConnected() {
+    // Listen for Comet messages from Sails
+    socket.on('message', function messageReceived(message) {
+      log('Socket Received :: ', message);
+      //////////////////////////////////////////////////////
+      //受信したmodelとverbによって処理を切り替える
+      switch (message.model) {
+        case 'castlady':
+          switch(message.verb){
+            case 'update':kscast.showCast(message.data);break;
+          }
+          break;
+
+        case 'detailrecord':
+          break;
+      }
+    });
+      //new 0.10.5
+    socket.on('visitor', function (cometEvent) {
+      console.log(cometEvent);
+    });
+
+    
+    socket.on('disconnect', function(){
+      console.log('user disconnected.try to reconnect');
+      io.connect();
+    });
+
+    ///////////////////////////////////////////////////////////
+    // Here's where you'll want to add any custom logic for
+    // when the browser establishes its socket connection to 
+    // the Sails.js server.
+    ///////////////////////////////////////////////////////////
+
+    //★暫定初期処理
+    $(document).ready(function() {
+      //ローカル日付設定
+      $('#current-local-time').toDate({
+        format : 'm月d日(W) H時i分'
+      });
+      //新規ボタンの初期化
+      ksvisitor.initNewVisBtn( $('#new_visitor_drag') );
+
+      //企業ID、店舗IDを取得
+      socket.get('/mshop', {
+        companyId: '53f1ad2744cd61330eec7a4c',
+        id: '53f1b2735b1b85f90e73d750'
+      }, function(res) {
+        KsWidgetTmpl.prototype.shopObj=res;
+        window.shop = res;
+        //店舗名の表示
+        $('.login-shopname').text(res.shopName);
+
+        //客席・座席の初期化
+        ksseats.initSeats(res);
+      });
+
+      //営業日を取得
+      //座席を取得
+//      socket.get('/visitor', {}, function(res) {
+//        $('#all_visitors div').remove();
+//        addAllVisitors(res);
+//      });
+  
+      socket.get('/businessdate', {
+        dateLabel: '2014-05-27'
+      }, function(res) {
+        KsWidgetTmpl.prototype.businessDate = res;
+        socket.get('/castlady', {
+          businessDate: res.id
+        }, function(res) {
+          $('#all_cast div').remove();
+          addAllCast(res);
+        });
+      });
+    });//document.ready
+
+    log('Socket is now connected and globally accessible as `socket`.\n' + 'e.g. to send a GET request to Sails, try \n' + '`socket.get("/", function (response) ' + '{ console.log(response); })`');
+  });
+
+  window.socket = socket;
+
+  // Simple log function to keep the example simple
+  function log() {
+    if (typeof console !== 'undefined') {
+      console.log.apply(console, arguments);
+    }
+  }
+
+  function addAllVisitors(visitors) {
+    $.each(visitors, function() {
+       ksvisitor.addVisitor(this);
+    });
+  }
+
+  function addAllCast(jcasts) {
+    $.each(jcasts, function() {
+      kscast.showCast(this);
+    });
+  }
+
+  function getCast(castId) {
+    socket.get('/castlady', {
+      'id': castId
+    }, function(res,err) {
+      kscast.addCast(res);
+    });
+  }
+
+  function outFromVisitor(event, ui) {
+    $(event.target).removeClass("ui-state-highlight").find("p.status").html("待ち・・。");
+    socket.post('/castLady/leave', {
+      'castId': $(ui.draggable).attr('id')
+    }, function(res) {
+      ui.draggable.find("span.point").html(res.point + "P")
+    });
+  }
+
+  /** 
+  called when CastLady Seated 
+  TODO This func. must be moved to other file.
+  */
+  function castLadySeatedBtnEvent(args) {
+    var _s = $(args.ui.draggable).attr('id');
+    //ポイント加算処理
+    socket.post('/castLady/addPoint', {
+      'castId': $(args.ui.draggable).attr('id').replace("cid-", ""),
+      'visitorId': $(args.event.target).attr('id').replace("vid-", ""),
+      'kind': args.kind
+    },function(res) {});
+  }
+  
+})(window.io);

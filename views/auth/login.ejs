@@ -1,0 +1,52 @@
+<form action="/login" method="post" class="form-horizontal ">
+<div class="form-group">
+  <div class="input-group input-group-lg">
+    <div class="col-sm-8">
+      <label>username:</label>
+      <input name="username" type="text" class="form-control" placeholder="ユーザ名：">
+    </div>
+  </div>
+  <div class="input-group input-group-lg">
+    <div class="col-sm-8">
+      <label>password:</label>
+    <input name="password" type="password" class="form-control" placeholder="パスワード：" >
+    </div>
+  </div>
+  
+  <div class="input-group input-group-lg">
+    <div class="col-sm-8">
+      <label>shop:</label>
+      <select id="tenponame" class="form-control" ></select>
+    <input type="hidden" name="shopId" id="shopId" value="" />
+    </div>
+  </div>
+  <div class="input-group input-group-lg">
+    <div class="col-sm-8">
+      <button type="submit" id='btn_submit' class="btn btn-primary btn-lg btn-block">ログイン</button>
+    </div>
+  </div>
+</div>
+<!--
+<div class="login">  
+    login: <input type="text" name="username" placeholder="Input Login ID" value="suzuki" /> <br/><br/>
+    password: <input type="password" name="password" placeholder="Input Login Password" value="suzuki" /><br/><br/>
+    店舗:<select id="tenponame"></select><br/><br/>
+    <input type="hidden" name="shopId" id="shopId" value="" /> -->
+
+</form>
+<script>
+  $(function(){
+    // 4/20 ログイン画面 店舗選択プルダウン
+    $('#tenponame option').remove();
+    io.socket.get('/mshop?limit=0', function(shop,err) {
+      for(var c in shop){
+        $('#tenponame').append($('<option>').html(shop[c].shopName).val(shop[c].id));
+      }
+    });
+      
+    $('#btn_submit').on("click", function(){
+      console.log('店舗：' + $('#tenponame').val() + 'でログイン');
+      $('#shopId').val($('#tenponame').val());
+    });
+  });
+</script>

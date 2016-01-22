@@ -1,0 +1,82 @@
+<div class="tab-pane fade" id="top-pane-mobile-nsys">
+  <div class="col-sm-12">
+    <p class="bg-info">
+      <span id="current-local-time" ></span>
+    </p>
+    <p class="bg-success">
+      <span id="mobile-shopname"></span>&nbsp;&nbsp;&nbsp;
+      <span id="mobile-tel"></span>
+      <br>
+      <span id="mobile-today"></span>&nbsp;&nbsp;&nbsp;
+      <span id="mobile-time-sta"></span>～<span id="mobile-time-end">
+    </p>
+  </div>
+  <div id="mobile_stopping" class="col-sm-12 col-xs-12" style="display: none">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div id="new-visitor-drag" class="panel-heading ddui-waiting-visitor divcenter"><h4 class="warnmsg">ただいまの時間は受付できません。<br>And now it can not be accepted.</h4></div>
+      </div>
+    </div>
+  </div>
+  <div id="mode1_1" class="col-sm-6 col-xs-6" style="display: none">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div id="new-visitor-drag" class="panel-heading">待ち組数（人数）<br>The number of the waiting groups<br><h4><span id="mobile-waitComer"></span></h4></div>
+      </div>
+    </div>
+  </div>
+  <div id="mode1_2" class="col-sm-6 col-xs-6" style="display: none">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div id="new-visitor-drag" class="panel-heading">待ち時間<br>Waiting time<br><h4><span id="mobile-waitTotal"></span></h4></div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div id="mode2" class="col-sm-12 col-xs-12" style="display: none">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div id="new-visitor-drag" class="panel-heading divcenter">
+          <h4><span id="mobile-waitName"></span>様&nbsp;&nbsp;&nbsp;<span id="mobile-waitGroup"></span>待ち</h4>
+          <h4>お呼びまで&nbsp;&nbsp;&nbsp;<span id="mobile-waitTime"></span></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div id="mode1_3" class="col-sm-12 col-xs-12" style="display: none">
+    <p class="bg-warning">
+      <span id="mobile-guide">
+        受付済のお客様は、ご自分のNoを押してください。
+      </span>
+    </p>
+  </div>
+  <div class="col-sm-12 col-xs-12">
+    <span id="mobile_btn">
+      <input type="button" value="新規受付" id="mobile-visitor-create" class="TBL_BLUE"/>&nbsp;&nbsp;&nbsp;
+      <input type="button" value="New reception" id="mobile-visitor-create-en" class="TBL_BLUE"/>&nbsp;&nbsp;&nbsp;
+      <input type="button" value="cookie削除(TEST用)" id="mobile-cookie-delete" class="TBL_BLUE"/>&nbsp;&nbsp;&nbsp;
+      <input type="button" value="呼出音(TEST用)" id="mobile-sound" class="TBL_BLUE"/>
+    </span>
+    <span class='pull-right'><span class="glyphicon glyphicon-refresh"></span><a onclick='javascript:ns.mobile.initMobile();return void(0);'>再表示</a></span>
+    <input type="hidden" id="visitorid" value=""></input>
+  </div>
+  <div class="col-sm-12 col-xs-12 well well-sm" id="mobile-pane-customer-area">
+    <div class="panel-group" id="mobile_all_customer"></div>
+  </div>
+</div>
+<audio id="btnsound" preload="auto">
+  <source src="/linker/sound/decision1.mp3" type="audio/mp3">
+  <source src="/linker/sound/decision1.ogg" type="audio/ogg">
+  <source src="/linker/sound/decision1.wav" type="audio/wav">
+  <p>※お使いのブラウザはHTML5のaudio要素をサポートしていないので音は鳴りません。</p>
+</audio>
+<script>
+  $(function(){
+    
+    if(!_top_pane_mobile_load){
+      _top_pane_mobile_load=true;
+      ns.mobile.initMobile();
+    }
+  });
+</script>

@@ -1,0 +1,65 @@
+<div class="tab-pane fade" id="top-pane-staff-nsys">
+  <div id="staff_stopping" class="col-sm-12 col-xs-12" style="display: none">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div id="new-visitor-drag" class="panel-heading ddui-waiting-visitor divcenter"><h3 class="warnmsg">受付停止中</h3></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-xs-4">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div id="new-visitor-drag" class="panel-heading ddui-waiting-visitor">待ち組数（人数）<br><h4><span id="waitComer-2"></span></h4></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-xs-4">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div id="new-visitor-drag" class="panel-heading ddui-waiting-visitor">待ち時間<br><h4><span id="waitTime-2"></span></h4></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-2 col-xs-2">
+    <input type="button" value="受付停止" id="staff-visitor-stop" class="TBL_BLUE"/>
+    <!--<div id="qcdemo2"></div>-->
+  </div>
+  <div class="col-sm-6 col-xs-6 well well-sm box_cus ratio-1_3" id="pane-customer-area">
+    <p class="bg-info">お客様状況
+      <span class='pull-right'><span class="glyphicon glyphicon-refresh"></span><a onclick='javascript:ns.staff.initStaff();return void(0);'>再表示</a></span>
+    </p>
+    <div class="panel-group inner_pre" id="all_staff"></div>
+  </div>
+  <div class="col-sm-1 col-xs-1"></div>
+  <div class="col-sm-4 col-xs-4">
+    <div class="well well-sm ratio-1_3" id="pane-enter-area">
+      <p class="bg-info">入店</p>
+      <div class="panel-group inner_rea" id="all_enter">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h4>入店</h4></div>
+        </div>
+      </div>
+    </div>
+    <div class="well well-sm box_abs ratio-1_3" id="pane-absence-area">
+      <p class="bg-info">不在</p>
+      <div class="panel-group inner_rea" id="all_absence"></div>
+    </div>
+    <div class="well well-sm ratio-1_3" id="pane-cancel-area">
+      <p class="bg-info">キャンセル</p>
+      <div class="panel-group inner_rea" id="all_cancel">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h4>キャンセル</h4></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(function(){
+    
+    if(!_top_pane_staff_load){
+      _top_pane_staff_load=true;
+      ns.staff.initStaff();
+    }
+  });
+</script>

@@ -1,0 +1,43 @@
+<!-- seat on floor -->
+  <div class="floor-seat panel">
+    <div class="panel-heading">
+      <span class="panel-title">
+        <a class="toggle" data-toggle="collapse" data-parent="#seat-accordionX" href=""><span class="panel-title-caret"></span><span class="seat-name"></span></a>&nbsp;
+        <span class="seat-delete-button" style="display: none">
+          <button class="btn btn-primary btn-sm glyphicon glyphicon-remove-circle seat-delete-action"/>
+        </span>
+      </span>
+      <span class="vis-head"></span>
+      <span class="vis-number label"></span>&nbsp;
+      <span class="vis-timer-icon"></span>&nbsp;
+      <span class="vis-timer-value minute-to"></span>&nbsp;
+      <span class="vis-set-value"></span>&nbsp;
+      <span class="vis-exit" style="display: none;">
+        <div class="btn-group" >
+          <!--<button class="btn btn-primary btn-sm exit" >強制退店</button>-->
+          
+          <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#" class='order-set-action' >延　長</a></li>
+            <li><a href="#" class='order-pay-action' >会　計</a></li>
+            <li><a href="#" class='order-item-action' >商　品</a></li>
+            <!--<li><a href="#" class='order-service-action' >サービス</a></li>-->
+            <li class="divider"></li>
+            <li><a href="#" class='order-revision-action' >修　正</a></li>
+            <li class="divider"></li>
+            <li><a href="#" class='exit' >リセット</a></li>
+          </ul>
+        </div>
+      </span>
+    </div>
+    <div id="" class="panel-collapse collapse">
+      <div class="panel-body seat-body-cast">
+        <small>指名</small>
+        <div class="well well-sm seat-body-cast-called"><ul class="list-inline cast-called"></ul></div>
+        <small>着席</small>
+        <div class="well well-sm seat-body-cast-seated"><ul class="list-inline cast-seated"></ul></div>
+      </div>
+    </div>
+  </div>

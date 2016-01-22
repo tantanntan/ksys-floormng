@@ -1,0 +1,137 @@
+<div class="tab-pane fade" id="top-pane-report">
+  <h4>集計</h4>
+  <span class="glyphicon glyphicon-refresh"></span><a id='report_refresh' onclick='return void(0);'>再表示</a><br>
+  期間
+  <input type="text" id="report_day_from" size="9" maxlength="10" value="" readOnly></input>
+  <button class="btn_report_day_from_del"><span class="glyphicon glyphicon-remove-circle"></span></button>
+  ～
+  <input type="text" id="report_day_to" size="9" maxlength="10" value="" readOnly></input>
+  <button class="btn_report_day_to_del"><span class="glyphicon glyphicon-remove-circle"></span></button>
+  <br><br>
+  <h4><span id="report_salary_shop_calc" class="link">店舗売上</span></h4>
+  <div id="report_salary_shop_calc_div" style="display: none">
+    <table id="report_salary_shop_table" border="1" style="display: none">
+    <tr>
+      <th class="TBL_BLUE" nowrap>営業日</th>
+      <th class="TBL_BLUE" nowrap>現金売上</th>
+      <th class="TBL_BLUE" nowrap>カード売上</th>
+      <th class="TBL_BLUE" nowrap>合計売上</th>
+    </tr>
+    <!-- 店舗売上templates -->
+    <tr id="report_salary_shop_template" style="display: none">
+      <td nowrap>
+        <input type="text" class="report_salary_shop_businessdate noborder" size="10" maxlength="10" value="" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_shop_sales_cash num noborder" size="10" maxlength="12" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_shop_sales_card num noborder" size="10" maxlength="12" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_shop_sales num noborder" size="10" maxlength="12" value="0" readOnly></input>
+      </td>
+    </tr>
+    <!-- 店舗売上templates end-->
+    </table>
+  </div>
+  <br>
+  <h4><span id="report_salary_calc" class="link">給料計算</span></h4>
+  <div class="box ratio-1_1">
+    <div id="report_salary_calc_div" class="inner" style="display: none">
+  <table id="report_salary_table" border="1" style="display: none">
+    <tr>
+      <th rowspan="2" class="TBL_BLUE" nowrap>氏名</th>
+      <th rowspan="2" class="TBL_BLUE" nowrap>キャスト名</th>
+      <th rowspan="2" class="TBL_BLUE" nowrap>勤務<br>日数</th>
+      <th rowspan="2" class="TBL_BLUE" nowrap>勤務<br>時間</th>
+      <th rowspan="2" class="TBL_BLUE" nowrap>ポイント</th>
+      <th rowspan="2" class="TBL_BLUE" nowrap>現金<br>バック</th>
+      <th rowspan="2" class="TBL_BLUE" nowrap>ペナルティ</th>
+      <th rowspan="2" class="TBL_BLUE" nowrap>福利厚生</th>
+      <th colspan="5" style="text-align:center" class="TBL_BLUE" nowrap>売上歩合制</th>
+      <th colspan="5" style="text-align:center" class="TBL_BLUE" nowrap>時給スライド制</th>
+    </tr>
+    <tr>
+      <th class="TBL_BLUE" nowrap>売上</th>
+      <th class="TBL_BLUE" nowrap>歩合(％)</th>
+      <th class="TBL_BLUE" nowrap>総支給額</th>
+      <th class="TBL_BLUE" nowrap>控除額</th>
+      <th class="TBL_BLUE" nowrap>差引支給額</th>
+      <th class="TBL_BLUE" nowrap>基本時給</th>
+      <th class="TBL_BLUE" nowrap>スライド時給</th>
+      <th class="TBL_BLUE" nowrap>総支給額</th>
+      <th class="TBL_BLUE" nowrap>控除額</th>
+      <th class="TBL_BLUE" nowrap>差引支給額</th>
+    </tr>
+    <!-- キャスト一覧templates -->
+    <tr id="report_salary_template" style="display: none">
+      <td nowrap>
+        <input type="text" class="report_salary_truename noborder" size="11" maxlength="20" value="" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_castname noborder" size="8" maxlength="20" value="" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_days num noborder" size="3" maxlength="4" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_hours num noborder" size="5" maxlength="6" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_point num noborder" size="5" maxlength="6" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_cashback num noborder" size="6" maxlength="8" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_penalty num noborder" size="6" maxlength="6" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_welfare num noborder" size="6" maxlength="6" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_sales num noborder" size="8" maxlength="10" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_percentage num noborder" size="3" maxlength="3" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_totalsalary0 num noborder" size="8" maxlength="10" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_deduction0 num noborder" size="6" maxlength="6" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_salary0 TBL_AQUA num noborder" size="8" maxlength="10" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_base num noborder" size="6" maxlength="6" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_slide num noborder" size="6" maxlength="6" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_totalsalary1 num noborder" size="8" maxlength="10" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_deduction1 num noborder" size="6" maxlength="6" value="0" readOnly></input>
+      </td>
+      <td nowrap>
+        <input type="text" class="report_salary_salary1 TBL_AQUA num noborder" size="8" maxlength="10" value="0" readOnly></input>
+      </td>
+    </tr>
+    <!-- キャスト一覧templates end-->
+  </table>
+    </div>
+  </div>
+</div>
+<script>
+  $(function(){
+    
+    if(!_top_pane_ready_load){
+      _top_pane_ready_load=true;
+      window.ks.main.loaded();
+    }
+  });
+</script>

@@ -1,0 +1,58 @@
+<div id= "modal-nsys-mobile" class="modal fade" role="dialog" data-backdrop="static">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4 class="modal-title">新規受付</h4>
+    </div>
+    <div class="modal-body">
+      <div>
+        人数：<input type="text" class="num" id="mob-member" size="4" maxlength="4" value=""></input>
+        <button id="btn_mobmember_del">C</button>
+        <br>
+        <span id="num_alert" class="errmsg"></span>
+      </div>
+      <br>
+      <div>
+        お名前（カナ）：<input type="text" id="mob-name" size="16" maxlength="20" value=""></input>
+        <button id="btn_mobname_del">C</button>
+        <br>
+        <span id="kana_alert" class="errmsg"></span>
+      </div>
+      <br>
+      <div id="moboption1" style="display: none">
+        <span id="moboption1_opttitle"></span>：
+        <label><input type="radio" id="moboption1_rdoname1" name="rdo1" value=""/><span id="moboption1_optname1"></span></label>&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" id="moboption1_rdoname2" name="rdo1" value=""/><span id="moboption1_optname2"></span></label>&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" id="moboption1_rdoname3" name="rdo1" value=""/><span id="moboption1_optname3"></span></label>
+        <br>
+      </div>
+      <div id="moboption2" style="display: none">
+        <span id="moboption2_opttitle"></span>：
+        <label><input type="radio" id="moboption2_rdoname1" name="rdo2" value=""/><span id="moboption2_optname1"></span></label>&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" id="moboption2_rdoname2" name="rdo2" value=""/><span id="moboption2_optname2"></span></label>&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" id="moboption2_rdoname3" name="rdo2" value=""/><span id="moboption2_optname3"></span></label>
+        <br>
+      </div>
+      <div id="moboption3" style="display: none">
+        <span id="moboption3_opttitle"></span>：
+        <label><input type="radio" id="moboption3_rdoname1" name="rdo3" value=""/><span id="moboption3_optname1"></span></label>&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" id="moboption3_rdoname2" name="rdo3" value=""/><span id="moboption3_optname2"></span></label>&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" id="moboption3_rdoname3" name="rdo3" value=""/><span id="moboption3_optname3"></span></label>
+        <br>
+      </div>
+      <div id="moboption4" style="display: none">
+        <span id="moboption4_opttitle"></span>：
+        <label><input type="radio" id="moboption4_rdoname1" name="rdo4" value=""/><span id="moboption4_optname1"></span></label>&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" id="moboption4_rdoname2" name="rdo4" value=""/><span id="moboption4_optname2"></span></label>&nbsp;&nbsp;&nbsp;
+        <label><input type="radio" id="moboption4_rdoname3" name="rdo4" value=""/><span id="moboption4_optname3"></span></label>
+        <br>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default btn-left" data-dismiss="modal">Cancel</button>
+      <button id="modal-form-nsys-mobile-save-btn" type="button" class="btn btn-primary" data-dismiss="modal" data-target="#modal-nsys-mobile">ＯＫ</button>
+    </div>
+  </div>
+</div>
+</div>

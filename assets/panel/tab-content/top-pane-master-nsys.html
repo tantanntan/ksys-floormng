@@ -1,0 +1,116 @@
+<div class="tab-pane fade" id="top-pane-master-nsys">
+  <h4>施設情報登録</h4>
+  <span class="glyphicon glyphicon-refresh"></span><a onclick='javascript:ns.master.initMaster();return void(0);'>再表示</a>
+    <table id="nsys_master_table">
+      <tr>
+        <td><span>ログインID：</span></td>
+        <td>
+          <input type="text" id="master-tenpo-mid" size="50" maxlength="20"/>
+          <input type="hidden" id="master-tenpo-id" value=""></input>
+        </td>
+      </tr>
+      <tr><td><span>パスワード：</span></td><td><input type="password" id="master-tenpo-password" size="50" maxlength="20"/></td></tr>
+      <tr>
+        <td>
+          <span>ジャンル：</span>
+        </td>
+        <td>
+          <select id="master-tenpo-type"></select>
+        </td>
+      </tr>
+      <tr><td><span>店舗名：</span></td><td><input type="text" id="master-tenpo-name" size="50" maxlength="50"/></td></tr>
+      <tr><td><span>郵便番号：</span></td><td><input type="text" id="master-tenpo-number" size="50" maxlength="8"/></td></tr>
+      <tr><td><span>住所：</span></td><td><input type="text" id="master-tenpo-address" size="50" maxlength="100"/></td></tr>
+      <tr><td><span>電話番号：</span></td><td><input type="text" id="master-tenpo-tel" size="50" maxlength="14"/></td></tr>
+      <tr><td><span>FAX番号：</span></td><td><input type="text" id="master-tenpo-fax" size="50" maxlength="14"/></td></tr>
+      <tr><td><span>ホームページ：</span></td><td><input type="text" id="master-tenpo-url" size="50" maxlength="100"/></td></tr>
+      <tr><td><span>行列整理URL：</span></td><td><input type="text" id="master-tenpo-gurl" size="50" maxlength="100" readOnly/></td></tr>
+      <tr>
+        <td><span>営業曜日：</span></td>
+        <td>
+          <label><input type="checkbox" id="master-tenpo-week-mon" value="1" class="checkbox"/>月</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" id="master-tenpo-week-tue" value="2" class="checkbox"/>火</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" id="master-tenpo-week-wed" value="3" class="checkbox"/>水</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" id="master-tenpo-week-thu" value="4" class="checkbox"/>木</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" id="master-tenpo-week-fri" value="5" class="checkbox"/>金</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" id="master-tenpo-week-sat" value="6" class="checkbox"/>土</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="checkbox" id="master-tenpo-week-sun" value="0" class="checkbox"/>日</label>
+        </td>
+      </tr>
+      <tr><td><span>1組あたり待ち時間：</span></td><td><input type="text" class="num" id="master-tenpo-wait" size="4" maxlength="4"/>分</td></tr>
+    </table>
+    <br>
+    <div>
+      <span class="infomsg">営業時間（複数登録可）</span>
+      <button id="btn_business_add"><span class="glyphicon glyphicon-plus-sign"></span></button>
+      <button id="btn_business_del"><span class="glyphicon glyphicon-remove-sign"></span></button>
+    </div>
+    <br>
+    <table id="nsys_master_table_business">
+      <tr id="business_template" style="display: none">
+        <td>店頭：
+          <select class="master-tenpo-service-opening_h"></select>：<select class="master-tenpo-service-opening_m"></select>
+          ～
+          <select class="master-tenpo-service-closing_h"></select>：<select class="master-tenpo-service-closing_m"></select>&nbsp;&nbsp;&nbsp;
+        </td>
+        <td>スマホ：
+          <select class="master-tenpo-mobile-opening_h"></select>：<select class="master-tenpo-mobile-opening_m"></select>
+          ～
+          <select class="master-tenpo-mobile-closing_h"></select>：<select class="master-tenpo-mobile-closing_m"></select>&nbsp;&nbsp;&nbsp;
+          <input type="checkbox" class="master-tenpo-chk checkbox" value="1"></input>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <div>
+      <span class="infomsg">オプション（４つまで登録できます）</span>
+      <button id="btn_option_add"><span class="glyphicon glyphicon-plus-sign"></span></button>
+      <button id="btn_option_del"><span class="glyphicon glyphicon-remove-sign"></span></button>
+    </div>
+    <br>
+    <table id="nsys_master_table_option">
+      <tr id="option_templateT" style="display: none">
+        <td><span>オプションタイトル：</span></td>
+        <td>
+          （日）<input type="text" class="option_title" size="10" maxlength="10" value=""/>
+          （英）<input type="text" class="option_title_en" size="10" maxlength="10" value=""/>
+        </td>
+      </tr>
+      <tr id="option_template1" style="display: none">
+        <td><span>オプション項目１：</span></td>
+        <td>
+          （日）<input type="text" class="option_name1" size="10" maxlength="10" value=""/>
+          （英）<input type="text" class="option_name1_en" size="10" maxlength="10" value=""/>
+          （記）<input type="text" class="option_mark1" size="2" maxlength="1" value=""/>
+        </td>
+      </tr>
+      <tr id="option_template2" style="display: none">
+        <td><span>オプション項目２：</span></td>
+        <td>
+          （日）<input type="text" class="option_name2" size="10" maxlength="10" value=""/>
+          （英）<input type="text" class="option_name2_en" size="10" maxlength="10" value=""/>
+          （記）<input type="text" class="option_mark2" size="2" maxlength="1" value=""/>
+        </td>
+      </tr>
+      <tr id="option_template3" style="display: none">
+        <td><span>オプション項目３：</span></td>
+        <td>
+          （日）<input type="text" class="option_name3" size="10" maxlength="10" value=""/>
+          （英）<input type="text" class="option_name3_en" size="10" maxlength="10" value=""/>
+          （記）<input type="text" class="option_mark3" size="2" maxlength="1" value=""/>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <input type="button" value="登録" id="master-tenpo-detail-create" class="TBL_BLUE"/>
+  </div>
+</div>
+<script>
+  $(function(){
+    
+    if(!_top_pane_master_load){
+      _top_pane_master_load=true;
+      ns.master.initMaster();
+    }
+  });
+</script>

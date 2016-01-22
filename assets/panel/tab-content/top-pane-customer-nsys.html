@@ -1,0 +1,53 @@
+<div class="tab-pane fade" id="top-pane-customer-nsys">
+  <div id="customer_stopping" class="col-sm-12 col-xs-12" style="display: none">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div id="new-visitor-drag" class="panel-heading ddui-waiting-visitor divcenter"><h4 class="warnmsg">ただいまの時間は受付できません。<br>And now it can not be accepted.</h4></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-5 col-xs-5">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div id="new-visitor-drag" class="panel-heading">待ち組数（人数）<br>The number of the waiting groups<br><h4><span id="waitComer"></span></h4></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 col-xs-3">
+    <div class="panel-group">
+      <div class="panel panel-primary">
+        <div id="new-visitor-drag" class="panel-heading">待ち時間<br>Waiting time<br><h4><span id="waitTime"></span></h4></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4 col-xs-4">
+    <input type="text" size="12" value="ならばないくん" readOnly></input>
+    <input type="button" value="検索" class="TBL_BLUE"/>
+    <br>
+    でお客様のスマホにて確認できます。
+  </div>
+  <div id="customer_btn" class="col-sm-12">
+    <input type="button" value="新規受付" id="customer-visitor-create" class="TBL_BLUE"/>&nbsp;&nbsp;&nbsp;
+    <input type="button" value="New reception" id="customer-visitor-create-en" class="TBL_BLUE"/>
+  </div>
+  <div class="col-sm-6 col-xs-6 well well-sm" id="pane-customer-area">
+    <p class="bg-info">お客様状況<br>The visitor situation
+      <span class='pull-right'><span class="glyphicon glyphicon-refresh"></span><a onclick='javascript:ns.customer.initCustomer();return void(0);'>再表示</a></span>
+    </p>
+    <div class="panel-group" id="all_customer"></div>
+  </div>
+  <div class="col-sm-1 col-xs-1"></div>
+  <div class="col-sm-4 col-xs-4 well well-sm" id="pane-absence-area">
+    <p class="bg-info">不在<br>Absence</p>
+    <div class="panel-group" id="all_abs"></div>
+  </div>
+</div>
+<script>
+  $(function(){
+    
+    if(!_top_pane_customer_load){
+      _top_pane_customer_load=true;
+      ns.customer.initCustomer();
+    }
+  });
+</script>

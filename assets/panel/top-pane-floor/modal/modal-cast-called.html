@@ -1,0 +1,78 @@
+<div id= "modal-cast-called" class="modal fade" role="dialog" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">キャスト指名</h4>
+      </div>
+      <div class="modal-body">
+        <p class="message"></p>
+
+        <form role="form" class="modal-form-called-cast form-horizontal" >
+          <div class="form-group">
+            <label for="modal-form-called-cast-preset" class="col-sm-2 control-label">指名種別</label>
+            <div class="col-sm-8">
+              <select id="modal-form-called-cast-preset" class="form-called-cast-preset form-control"></select>
+              <span class="help-block">指名種別を選択してください.</span>
+            </div>
+          </div>
+          <div class="form-group form-group-lg">
+            <label for="modal-form-called-cast-point" class="col-sm-2 control-label">ポイント</label>
+            <div class="col-sm-8">
+              <div class="input-group">
+                <input type="text" id='modal-form-called-cast-point' class="form-control">
+                <span class="input-group-addon">Pt.</span>
+              </div>
+              <span class="help-block">ポイントを変更したい場合は直接入力してください.</span>
+            </div>
+            <div class="col-sm-1">
+              <button class="btn_called_cast_point_del"><span class="glyphicon glyphicon-remove-circle"></span></button>
+            </div>
+          </div>
+          <div class="form-group form-group-lg">
+            <label for="modal-form-called-cast-price" class="col-sm-2 control-label">価格</label>
+            <div class="col-sm-8">
+              <div class="input-group">
+                <input type="text" id='modal-form-called-cast-price' class="form-control">
+                <span class="input-group-addon">円</span>
+              </div>
+              <span class="help-block">価格を変更したい場合は直接入力してください.</span>
+            </div>
+            <div class="col-sm-1">
+              <button class="btn_called_cast_price_del"><span class="glyphicon glyphicon-remove-circle"></span></button>
+            </div>
+          </div>
+          <div class="form-group form-group-lg">
+            <label for="modal-form-called-cast-cashBack" class="col-sm-2 control-label">現金バック</label>
+            <div class="col-sm-8">
+              <div class="input-group">
+                <input type="text" id='modal-form-called-cast-cashBack' class="form-control">
+                <span class="input-group-addon">円</span>
+              </div>
+              <span class="help-block">現金バックを変更したい場合は直接入力してください.</span>
+            </div>
+            <div class="col-sm-1">
+              <button class="btn_called_cast_cashBack_del"><span class="glyphicon glyphicon-remove-circle"></span></button>
+            </div>
+          </div>
+          <div class="form-group form-group-lg">
+            <label for="modal-form-called-cast-setSales" class="col-sm-2 control-label">セット売上</label>
+            <div class="col-sm-8">
+              <div class="input-group">
+                <label><input type="checkbox" id='modal-form-called-cast-setSales' class="checkbox" value="1"/>追加する</label>
+              </div>
+              <span class="help-block">上記キャストにセット料金の売上を追加します。</span>
+            </div>
+          </div>
+
+        </form>
+        <p class="message"></p>
+        <p class="message">よろしいですか？</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-left" data-dismiss="modal">Cancel</button>
+        <button id="modal-form-cast-called-save-btn" type="button" class="btn btn-primary" data-dismiss="modal">確定</button>
+      </div>
+    </div>
+  </div>
+</div>

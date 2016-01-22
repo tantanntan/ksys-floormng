@@ -1,0 +1,52 @@
+<form action="/logout">
+<div class="logout">
+  <p>
+    Hello!!! <%= req.user.name %>さん
+    <button type="submit" class="TBL_BLUE">ログアウト</button>
+    <input type="hidden" id="login_shopId" value="<%= req.user.shopId %>" />
+  </p>
+</div>
+</form>
+<div id ="global-main" class="container">
+  <div id="global-header"></div>
+  <div id="global-tab"></div>
+  <div id="global-tab-content" class="tab-content"></div>
+</div>
+<!-- container -->
+<!-- Templates  -->
+<div id='widgetTemplates' style="display: none">
+  <!-- seat on waiting -->
+  <div class="waiting-seats panel panel-default">
+    <div class="panel-heading"><span class="panel-title seat-name"></span>&nbsp;<span class="vis-number label"></span></div>
+    <div class="panel-body"></div>
+  </div>
+  <!-- seat on waiting -->
+</div>
+<script>
+  $(function(){
+    // 4/20 アクセスレベルをprototypeに保持
+    KsWidgetTmpl.prototype.accesslv = <%= req.user.accesslv %>;
+    
+    // スクロールを抑止する関数
+    function preventScroll(event) {
+      // タップイベントに反応したいので、抑止しない。
+      if (event.touches[0].target.id == "all_ready") {return;}
+      if (event.touches[0].target.id == "all_rest") {return;}
+      if (event.touches[0].target.id == "all_work") {return;}
+      if (event.touches[0].target.id == "all_rwork") {return;}
+      if (event.touches[0].target.id == "all_back") {return;}
+      if (event.touches[0].target.id == "seat-accordion") {return;}
+      if (event.touches[0].target.id == "cast-accordion") {return;}
+      if (event.touches[0].target.id == "all_castmaster") {return;}
+      
+      // preventDefaultでブラウザ標準動作を抑止する。
+      event.preventDefault();
+    }
+    
+    // iPad / iPhoneのtouchmoveを無効にする
+    // 3/26 上記対応は本番移行後で再考慮。今は凍結しておく
+    // if (navigator.userAgent.search(/iPhone|iPad/) != -1) {
+    //   document.addEventListener("touchmove", preventScroll, false);
+    // }
+  });
+</script>

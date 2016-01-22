@@ -1,0 +1,25 @@
+<form action="/nlogout">
+<div class="logout">
+  <p>
+    Hello!!! <%= req.user.shopName %>さん
+    <button type="submit" class="TBL_BLUE">ログアウト</button>
+    <input type="hidden" id="ncompanyId" value="<%= req.user.companyId %>"></input>
+    <input type="hidden" id="nshopId" value="<%= req.user.shopId %>"></input>
+  </p>
+</div>
+</form>
+<div id ="global-main-nsys" class="container">
+  <div id="global-header-nsys"></div>
+  <div id="global-tab-nsys"></div>
+  <div class="col-sm-12">
+    <p class="bg-info"><span id="current-local-time" ></span></p>
+  </div>
+  <div id="global-tab-content-nsys" class="tab-content"></div>
+</div>
+<script>
+  $(function(){
+    // prototypeに保持
+    KsWidgetTmpl.prototype.ncompanyId = $('#ncompanyId').val();
+    KsWidgetTmpl.prototype.nshopId = $('#nshopId').val();
+  });
+</script>

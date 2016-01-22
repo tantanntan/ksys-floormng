@@ -1,0 +1,68 @@
+<div id= "modal-order-pay" class="modal fade" role="dialog" data-backdrop="static">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4 class="modal-title">お会計</h4>
+    </div>
+    <div class="modal-body">
+      <form role="form" class="modal-form-order-pay form-horizontal" >
+        <div class="form-group form-group-lg">
+          <label class="col-sm-4">来店</label>
+          <label id="order-pay-time-from" class="col-sm-6"></label>
+        </div>
+        <div class="form-group form-group-lg">
+          <label class="col-sm-4">清算</label>
+          <label id="order-pay-time-to" class="col-sm-6"></label>
+        </div>
+        <hr>
+        <div class="form-group form-group-lg">
+          <label for="modal-form-order-pay-1" class="col-sm-4">商品</label>
+          <label for="modal-form-order-pay-4" class="col-sm-2">単価</label>
+          <label for="modal-form-order-pay-2" class="col-sm-2">数量</label>
+          <label for="modal-form-order-pay-3" class="col-sm-2">金額</label>
+        </div>
+        <hr>
+        <div id="modal-form-order-pay-table"></div>
+        <div id="modal-form-order-pay-template" class="form-group form-group-lg" style="display: none">
+          <label for="modal-form-order-pay-1" class="order-pay-1 col-sm-4"></label>
+          <label for="modal-form-order-pay-4" class="order-pay-4 col-sm-2"></label>
+          <label for="modal-form-order-pay-2" class="order-pay-2 col-sm-2"></label>
+          <label for="modal-form-order-pay-3" class="order-pay-3 col-sm-2"></label>
+        </div>
+        <hr>
+        <div class="form-group form-group-lg">
+          <label class="col-sm-8">小計</label>
+          <label id="order-pay-subtotal" class="col-sm-2"></label>
+        </div>
+        <div class="form-group form-group-lg">
+          <label class="col-sm-8">サービス料</label>
+          <label id="order-pay-servicetax" class="col-sm-2"></label>
+        </div>
+        <div class="form-group form-group-lg">
+          <label class="col-sm-8">TAX</label>
+          <label id="order-pay-tax" class="col-sm-2"></label>
+        </div>
+        <div class="form-group form-group-lg">
+          <label class="col-sm-8">カード手数料</label>
+          <label id="order-pay-cardtax" class="col-sm-2"></label>
+        </div>
+        <hr>
+        <div class="form-group form-group-lg">
+          <label class="col-sm-8">合計（現金払い）</label>
+          <label id="order-pay-total-cash" class="col-sm-2"></label>
+        </div>
+        <div class="form-group form-group-lg">
+          <label class="col-sm-8">合計（カード支払い）</label>
+          <label id="order-pay-total-card" class="col-sm-2"></label>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default btn-left" data-dismiss="modal">Cancel</button>
+      <button id="modal-form-order-pay-save-btn" type="button" class="btn btn-primary" data-dismiss="modal" data-target="#modal-order-pay">現金</button>
+      <button id="modal-form-order-pay-save-btn2" type="button" class="btn btn-primary" data-dismiss="modal" data-target="#modal-order-pay">カード</button>
+    </div>
+  </div>
+</div>
+</div>
